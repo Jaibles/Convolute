@@ -1,10 +1,10 @@
-{% extends "_includes/default.njk" %}
+cobalt{% extends "_includes/default.njk" %}
  
 {% block title %}Convolute{% endblock %}
  
 {% block content %}
 
-  <main class="lg:relative">
+  <main class="lg:relative bg-gray-100">
     <div class="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
       <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
         <h1 class="text-2xl tracking-tight font-extrabold text-gray-900 sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl">
@@ -14,16 +14,12 @@
           Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
         </p>
         <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
-          <div class="rounded-md shadow">
-            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-              Get started
-            </a>
-          </div>
-          <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
-              Live demo
-            </a>
-          </div>
+          <button type="button" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-cobalt-500 hover:bg-cobalt-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
+            Get Started
+          </button>
+          <button type="button" class="ml-3 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-black bg-white hover:bg-cobalt-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
+            Talk to us
+          </button>
         </div>
       </div>
     </div>
@@ -41,121 +37,120 @@
       </div>
       <dl class="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
         <div class="flex">
-          <!-- Heroicon name: check -->
-          <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          <svg width="24" height="24" class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path d="M3.495 13.465L4.69 15.029L4.948 16.976C5.091 18.056 5.94 18.906 7.02 19.05L8.972 19.311L10.535 20.505C11.4 21.166 12.599 21.166 13.464 20.505L15.028 19.31H15.026L16.974 19.052C18.054 18.909 18.904 18.06 19.048 16.98L19.308 15.028C19.308 15.029 19.912 14.238 20.503 13.465C21.164 12.6 21.163 11.401 20.503 10.536L19.31 8.97099L19.052 7.02399C18.909 5.94399 18.06 5.09399 16.98 4.94999L15.027 4.68999L13.464 3.49599C12.599 2.83499 11.4 2.83499 10.535 3.49599L8.971 4.68999H8.973L7.025 4.94899C5.945 5.09199 5.095 5.94099 4.951 7.02099L4.69 8.97299C4.69 8.97199 4.086 9.76299 3.495 10.536C2.835 11.4 2.835 12.6 3.495 13.465V13.465Z" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14.803 10.602L11.302 14.103L9.19901 12.002" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
+
           <div class="ml-3">
             <dt class="text-lg leading-6 font-medium text-gray-900">
-              Invite team members
+              Quality
             </dt>
             <dd class="mt-2 text-base text-gray-500">
-              Tempor tellus in aliquet eu et sit nulla tellus. Suspendisse est, molestie blandit quis ac. Lacus.
+              We achieve best-in-class data quality by mandating consensus and high worker accuracy.
             </dd>
           </div>
         </div>
 
         <div class="flex">
-          <!-- Heroicon name: check -->
-          <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          <svg width="24" height="24" class="flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <g stroke-linecap="round" stroke-width="1.5" stroke="#323232" fill="none" stroke-linejoin="round">
+              <path d="M21 21a.1.1 0 110 0 .1.1 0 010 0M21 12a.1.1 0 110 0 .1.1 0 010 0M21 16.4a.1.1 0 110 .2.1.1 0 010-.2M21 7.4a.1.1 0 110 .2.1.1 0 010-.2M16.6 21a.1.1 0 11-.2 0 .1.1 0 01.2 0M3 3a.1.1 0 110 0 .1.1 0 010 0M21 3a.1.1 0 110 0 .1.1 0 010 0M12 3a.1.1 0 110 0 .1.1 0 010 0M7.6 3a.1.1 0 11-.2 0 .1.1 0 01.2 0M16.6 3a.1.1 0 11-.2 0 .1.1 0 01.2 0M3 7.4a.1.1 0 110 .2.1.1 0 010-.2M10.2 21H4.8c-1 0-1.8-.8-1.8-1.8v-5.4c0-1 .8-1.8 1.8-1.8h5.4c1 0 1.8.8 1.8 1.8v5.4c0 1-.8 1.8-1.8 1.8zM11.5 12.5L16 8M16 12V8M12 8h4"/>
+            </g>
           </svg>
           <div class="ml-3">
             <dt class="text-lg leading-6 font-medium text-gray-900">
-              Notifications
+              Scale
             </dt>
             <dd class="mt-2 text-base text-gray-500">
-              Ornare donec rhoncus vitae nisl velit, neque, mauris dictum duis. Nibh urna non parturient.
+              Our 2M+ workers generate tens of millions of labels every day with high accuracy.
             </dd>
           </div>
         </div>
 
         <div class="flex">
-          <!-- Heroicon name: check -->
-          <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          <svg width="24" height="24" class="flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path d="M8 10V7C8 4.791 9.791 3 12 3C14.209 3 16 4.791 16 7V10M17 21H7C5.895 21 5 20.105 5 19V12C5 10.895 5.895 10 7 10H17C18.105 10 19 10.895 19 12V19C19 20.105 18.105 21 17 21ZM9 15.541C8.997 15.541 8.995 15.543 8.995 15.546C8.995 15.549 8.997 15.551 9 15.551C9.003 15.551 9.005 15.549 9.005 15.546C9.005 15.543 9.003 15.541 9 15.541ZM12.005 15.541C12.002 15.541 12 15.543 12 15.546C12 15.549 12.003 15.551 12.005 15.551C12.008 15.551 12.01 15.549 12.01 15.546C12.01 15.543 12.008 15.541 12.005 15.541ZM15 15.541C14.997 15.541 14.995 15.543 14.995 15.546C14.995 15.549 14.997 15.551 15 15.551C15.003 15.551 15.005 15.549 15.005 15.546C15.005 15.543 15.003 15.541 15 15.541Z" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div class="ml-3">
             <dt class="text-lg leading-6 font-medium text-gray-900">
-              List view
+              Security
             </dt>
             <dd class="mt-2 text-base text-gray-500">
-              Etiam cras augue ornare pretium sit malesuada morbi orci, venenatis. Dictum lacus.
+              We provide multiple secure service offerings, including secure, remote contractors, on-premise solutions, and ISO 27001 / ISO 9001 accredited secure facilities.
             </dd>
           </div>
         </div>
 
         <div class="flex">
-          <!-- Heroicon name: check -->
-          <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          <svg width="24" height="24"  class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path d="M12.967 3L4.75 14H12L11.033 21L19.25 10H12L12.967 3Z" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
+
           <div class="ml-3">
             <dt class="text-lg leading-6 font-medium text-gray-900">
-              Boards
+              Speed
             </dt>
             <dd class="mt-2 text-base text-gray-500">
-              Interdum quam pulvinar turpis tortor, egestas quis diam amet, natoque. Mauris sagittis.
+              With deep expertise planning and recruiting to meet a variety of uses cases for our clients, we can quickly ramp up new projects in new markets.
             </dd>
           </div>
         </div>
 
         <div class="flex">
-          <!-- Heroicon name: check -->
-          <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          <svg width="24" height="24" class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path d="M11 15.9H3.9C2.85 15.9 2 15.05 2 14V4.9C2 3.85 2.85 3 3.9 3H19.1C20.15 3 21 3.85 21 4.9V10M6 13H5M18 6H17M19.778 16.111L17.556 18.333L16.222 17M13.179 7.971C14.106 8.898 14.106 10.402 13.179 11.33C12.252 12.257 10.748 12.257 9.82 11.33C8.893 10.403 8.893 8.899 9.82 7.971C10.748 7.043 12.252 7.043 13.179 7.971ZM18 21C15.791 21 14 19.209 14 17C14 14.791 15.791 13 18 13C20.21 13 22 14.791 22 17C22 19.209 20.21 21 18 21Z" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
+
           <div class="ml-3">
             <dt class="text-lg leading-6 font-medium text-gray-900">
-              Keyboard shortcuts
+              Low-Cost
             </dt>
             <dd class="mt-2 text-base text-gray-500">
-              Ullamcorper in ipsum ac feugiat. Senectus at aliquam vulputate mollis nec. In at risus odio.
+              Our automated task routing and globally distributed workforce allows us to offer the most cost-effectivesolution on the market.
             </dd>
           </div>
         </div>
 
         <div class="flex">
-          <!-- Heroicon name: check -->
-          <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          <svg width="24" height="24" class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path d="M3 15H8M8 18H5M8 21H7M11.718 7.985V12.636L15.374 14.865M3.059 11C3.557 6.501 7.368 3 12 3C16.971 3 21 7.029 21 12C21 16.971 16.971 21 12 21" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div class="ml-3">
             <dt class="text-lg leading-6 font-medium text-gray-900">
-              Reporting
+              Efficiency
             </dt>
             <dd class="mt-2 text-base text-gray-500">
-              Magna a vel sagittis aliquam eu amet. Et lorem auctor quam nunc odio. Sed bibendum.
+              Efficiently scale large and multiple data pipelines to realize the impact of AI/ML projects.
             </dd>
           </div>
         </div>
 
         <div class="flex">
-          <!-- Heroicon name: check -->
-          <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          <svg width="24" height="24" class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path d="M8.25 6L15.007 5.987C16.67 5.984 18.019 7.335 18.012 8.998V9.012C18.005 10.664 16.664 12 15.013 12H9.999C8.343 12 7 13.343 7 14.999C7 16.656 8.344 17.999 10.001 17.998L20 17.995M20 17.995L18.003 19.992M20 17.995L18.003 15.997M7.59099 4.40901C8.46967 5.28769 8.46967 6.71231 7.59099 7.59099C6.71231 8.46967 5.28769 8.46967 4.40901 7.59099C3.53033 6.71231 3.53033 5.28769 4.40901 4.40901C5.28769 3.53033 6.71231 3.53033 7.59099 4.40901Z" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div class="ml-3">
             <dt class="text-lg leading-6 font-medium text-gray-900">
-              Calendars
+              Flexibility
             </dt>
             <dd class="mt-2 text-base text-gray-500">
-              Sed mi, dapibus turpis orci posuere integer. A porta viverra posuere adipiscing turpis.
+              Operational excellence to provide extreme flexibility on quality and annotation requirements.
             </dd>
           </div>
         </div>
 
         <div class="flex">
-          <!-- Heroicon name: check -->
-          <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          <svg width="24" height="24" class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path d="M18 10H16.29M18 14H16.29M7.71 10H6M7.71 14H6M10 6V7.71M14 6V7.71M10 16.29V18M14 16.29V18M8.81856 7.714H15.1804C15.7905 7.714 16.285 8.20853 16.285 8.81856V15.1804C16.285 15.7905 15.7905 16.285 15.1804 16.285H8.81856C8.20853 16.285 7.714 15.7905 7.714 15.1804V8.81856C7.714 8.20853 8.20853 7.714 8.81856 7.714ZM10.286 10.286H13.715V13.715H10.286V10.286ZM5.7614 3H18.2386C19.7637 3 21 4.23632 21 5.7614V18.2386C21 19.7637 19.7637 21 18.2386 21H5.7614C4.23632 21 3 19.7637 3 18.2386V5.7614C3 4.23632 4.23632 3 5.7614 3Z" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
+
           <div class="ml-3">
             <dt class="text-lg leading-6 font-medium text-gray-900">
-              Mobile app
+              Technology Enabled
             </dt>
             <dd class="mt-2 text-base text-gray-500">
-              Quisque sapien nunc nisl eros. Facilisis sagittis maecenas id dignissim tristique proin sed.
+              ML-powered annotation tooling and quality assurance systems deliver high quality at low cost.
             </dd>
           </div>
         </div>
@@ -163,28 +158,24 @@
     </div>
   </div>
 
-  <main class="lg:relative">
+  <main class="lg:relative bg-black">
     <div class="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
       <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
-        <h1 class="text-2xl tracking-tight font-extrabold text-gray-900 sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl">
-          <span class="block xl:inline">
+        <h3 class="text-2xl font-extrabold text-white tracking-tight sm:text-3xl">
             Human powered machine checked data
-          </span>
-        </h1>
-        <p class="mt-3 max-w-md mx-auto text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+        </h2>
+        <p class="mt-3 max-w-md mx-auto text-white md:mt-5 md:max-w-3xl">
           After sending us your data via API call, our platform; through a combination of human work and review, smart tools, statistical confidence checks and machine learning checks; returns scalable, accurate ground truth data.
         </p>
         <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
-          <div class="rounded-md shadow">
-            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-              Try it out
-            </a>
-          </div>
+          <button type="button" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-black bg-mustard-500 hover:bg-mustard-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
+            Try it out
+          </button>
         </div>
       </div>
     </div>
     <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
-      <img class="absolute inset-0 w-full h-full object-cover" src="src/images/hero.svg" alt="">
+      <img class="absolute inset-0 w-full h-full object-cover" src="src/images/how-it-works.svg" alt="">
     </div>
   </main>
 
@@ -323,15 +314,15 @@
   </div>
 
   <!-- Testimonials -->
-  <section class="bg-indigo-800">
+  <section class="bg-cobalt-800">
     <div class="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
-      <div class="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 md:border-r md:border-indigo-900 lg:pr-16">
+      <div class="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 md:border-r md:border-cobalt-900 lg:pr-16">
         <div class="md:flex-shrink-0">
-          <img class="h-12" src="https://tailwindui.com/img/logos/tuple-logo-indigo-300.svg" alt="Tuple">
+          <img class="h-12" src="https://tailwindui.com/img/logos/tuple-logo-cobalt-300.svg" alt="Tuple">
         </div>
         <blockquote class="mt-6 md:flex-grow md:flex md:flex-col">
           <div class="relative text-lg font-medium text-white md:flex-grow">
-            <svg class="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-indigo-600" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+            <svg class="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-cobalt-600" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
               <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
             </svg>
             <p class="relative">
@@ -345,19 +336,19 @@
               </div>
               <div class="ml-4">
                 <div class="text-base font-medium text-white">Judith Black</div>
-                <div class="text-base font-medium text-indigo-200">CEO, Tuple</div>
+                <div class="text-base font-medium text-cobalt-200">CEO, Tuple</div>
               </div>
             </div>
           </footer>
         </blockquote>
       </div>
-      <div class="py-12 px-4 border-t-2 border-indigo-900 sm:px-6 md:py-16 md:pr-0 md:pl-10 md:border-t-0 md:border-l lg:pl-16">
+      <div class="py-12 px-4 border-t-2 border-cobalt-900 sm:px-6 md:py-16 md:pr-0 md:pl-10 md:border-t-0 md:border-l lg:pl-16">
         <div class="md:flex-shrink-0">
-          <img class="h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-300.svg" alt="Workcation">
+          <img class="h-12" src="https://tailwindui.com/img/logos/workcation-logo-cobalt-300.svg" alt="Workcation">
         </div>
         <blockquote class="mt-6 md:flex-grow md:flex md:flex-col">
           <div class="relative text-lg font-medium text-white md:flex-grow">
-            <svg class="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-indigo-600" fill="currentColor" viewBox="0 0 32 32">
+            <svg class="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-cobalt-600" fill="currentColor" viewBox="0 0 32 32">
               <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
             </svg>
             <p class="relative">
@@ -371,7 +362,7 @@
               </div>
               <div class="ml-4">
                 <div class="text-base font-medium text-white">Joseph Rodriguez</div>
-                <div class="text-base font-medium text-indigo-200">CEO, Workcation</div>
+                <div class="text-base font-medium text-cobalt-200">CEO, Workcation</div>
               </div>
             </div>
           </footer>
