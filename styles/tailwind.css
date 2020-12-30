@@ -42,3 +42,15 @@ body {
   width: 1220px;
   z-index: 100;
 }
+
+.Complete {
+  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs font-medium bg-green-100 text-green-800;
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  font-size: 10px;
+}
+
+.Pending {
+  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs font-medium bg-cobalt-100 text-cobalt-800;
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  font-size: 10px;
+}
