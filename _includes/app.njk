@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-      {% block title %}App{% endblock %}
+      {% block title %}Convolute App{% endblock %}
     </title>
     <meta charset="UTF-8"/>
     {% if description %}
@@ -15,15 +15,15 @@
     <script src="/js/alpine.js?v={% version %}"></script>
   </head>
   <body>
-    <div class="h-screen flex overflow-hidden bg-white">
-      <div class="hidden">
+    <div class="h-screen flex overflow-hidden bg-white" x-data="{open:false}">
+      <div x-show="open" >
         <div class="fixed inset-0 flex z-40">
           <div class="fixed inset-0">
             <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
           </div>
           <div tabindex="0" class="relative flex-1 flex flex-col max-w-xs w-full bg-white focus:outline-none">
             <div class="absolute top-0 right-0 -mr-12 pt-2">
-              <button type="button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+              <button @click="open = false" type="button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                 <span class="sr-only">Close sidebar</span>
                 <!-- Heroicon name: x -->
                 <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -32,8 +32,11 @@
               </button>
             </div>
             <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-              <div class="flex-shrink-0 flex items-center px-4">
-                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-900-text.svg" alt="Workflow">
+              <div class="flex justify-start lg:w-0 lg:flex-1">
+                <a href="/app">
+                  <span class="sr-only">Convolute</span>
+                  <img class="w-auto h-8" src="/src/images/convolute-logo.svg" alt="Convolute logo">
+                </a>
               </div>
               <nav aria-label="Sidebar" class="mt-5">
                 <div class="px-2 space-y-1">
@@ -44,7 +47,7 @@
                     Dashboards
                   </a>
 
-                  <a href="/app-project" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
+                  <a href="/tasks/task1" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md">
                     <!-- Heroicon name: calendar -->
                     <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -145,9 +148,31 @@
           </div>
         </div>
       </div>
-      {% block content %}
-        {{ content | safe }}
-      {% endblock %}
+
+      <div class="flex flex-col w-0 flex-1 overflow-hidden">
+        <div class="lg:hidden">
+          <div class="flex items-center justify-between bg-gray-50 border-b border-gray-200 px-4 py-1.5">
+            <div class="flex justify-start lg:w-0 lg:flex-1">
+              <a href="#">
+                <span class="sr-only">Convolute</span>
+                <img class="w-auto h-8" src="/src/images/convolute-logo.svg" alt="Convolute logo">
+              </a>
+            </div>
+            <div>
+              <button @click="open = true" type="button" class="-mr-3 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900">
+                <span class="sr-only">Open sidebar</span>
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {% block content %}
+          {{ content | safe }}
+        {% endblock %}
+      </div>
     </div>
   </body>
 </html>
