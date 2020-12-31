@@ -328,7 +328,7 @@
             <div class="h-full">
               <div class="bg-white overflow-hidden">
                 <ul class="divide-y divide-gray-100">
-                {%- for task in collections.task -%}
+                {%- for task in collections.task | reverse -%}
                   <li {% if page.url == task.url %} class="bg-cobalt-50 hover:bg-cobalt-50"{% endif %}>
                     <a href="{{ task.url }}" class="block hover:bg-gray-50">
                       <div class="px-4 py-3 sm:px-4">
