@@ -15,11 +15,20 @@
     <script src="/js/alpine.js?v={% version %}"></script>
   </head>
   <body>
+    <div class="top invisible lg:visible">
+      <div class="max-w-7xl space-y-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8 middle">
+        <div class="border-l border-gray-100"></div>
+        <div class="border-l border-gray-50"></div>
+        <div class="border-l border-gray-50"></div>
+        <div class="border-l border-gray-100"></div>
+      </div>
+    </div>
+
     <div x-data="{open:false}" class="relative bg-gray-50">
       <div class="relative bg-white shadow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
           <div class="flex justify-between items-center py-6 md:justify-start md:space-x-10">
-            <div class="flex justify-start lg:w-0 lg:flex-1">
+            <div class="flex justify-start lg:w-0 lg:flex-1 ml-6">
               <a href="#">
                 <span class="sr-only">Convolute</span>
                 <img class="w-auto h-8" src="src/images/convolute-logo.svg" alt="Convolute logo">
@@ -179,10 +188,10 @@
       {{ content | safe }}
     {% endblock %}
 
-    <footer class="mt-16 bg-black" aria-labelledby="footerHeading">
+    <footer class="mt-16 bg-black z-10 relative" aria-labelledby="footerHeading">
       <h2 id="footerHeading" class="sr-only">Footer</h2>
       <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <div class="pb-8 xl:grid xl:grid-cols-5 xl:gap-8">
+        <div class="pb-8 xl:grid xl:grid-cols-4 xl:gap-8">
           <div class="grid grid-cols-2 gap-8 xl:col-span-4">
             <div class="md:grid md:grid-cols-2 md:gap-8">
               <div>

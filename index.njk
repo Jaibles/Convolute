@@ -1,11 +1,11 @@
-cobalt{% extends "_includes/default.njk" %}
+{% extends "_includes/default.njk" %}
  
 {% block title %}Convolute{% endblock %}
  
 {% block content %}
-  <main class="lg:relative bg-gray-100">
+  <main class="lg:relative bg-gray-100 z-10">
     <div class="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-32 lg:text-left">
-      <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
+      <div class="ml-6 px-4 lg:w-1/2 sm:px-8 xl:pr-16">
         <h1 class="tracking-tight font-extrabold text-gray-900 text-4xl md:text-4xl lg:text-5xl xl:text-5xl tracking-wide">
           A Full-Stack AI Company
         </h1>
@@ -52,20 +52,20 @@ cobalt{% extends "_includes/default.njk" %}
 
   <div class="bg-white">
     <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
-      <div class="mt-12 pb-8">
+      <div class="mt-12 pb-8 ml-6">
         <h2 class="text-4xl font-extrabold text-gray-900">
           Delivering confidence for your AI projects
         </h2>
       </div>
       <dl class="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
-        <div class="flex">
-          <svg width="24" height="24" class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <div class="flex flex-col">
+          <svg width="24" height="24" class="ml-6 flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path d="M3.495 13.465L4.69 15.029L4.948 16.976C5.091 18.056 5.94 18.906 7.02 19.05L8.972 19.311L10.535 20.505C11.4 21.166 12.599 21.166 13.464 20.505L15.028 19.31H15.026L16.974 19.052C18.054 18.909 18.904 18.06 19.048 16.98L19.308 15.028C19.308 15.029 19.912 14.238 20.503 13.465C21.164 12.6 21.163 11.401 20.503 10.536L19.31 8.97099L19.052 7.02399C18.909 5.94399 18.06 5.09399 16.98 4.94999L15.027 4.68999L13.464 3.49599C12.599 2.83499 11.4 2.83499 10.535 3.49599L8.971 4.68999H8.973L7.025 4.94899C5.945 5.09199 5.095 5.94099 4.951 7.02099L4.69 8.97299C4.69 8.97199 4.086 9.76299 3.495 10.536C2.835 11.4 2.835 12.6 3.495 13.465V13.465Z" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M14.803 10.602L11.302 14.103L9.19901 12.002" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
 
-          <div class="ml-3">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+          <div class="mt-3 ml-6">
+            <dt class="this text-lg leading-6 font-bold text-gray-900 this">
               Quality
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -74,14 +74,14 @@ cobalt{% extends "_includes/default.njk" %}
           </div>
         </div>
 
-        <div class="flex">
-          <svg width="24" height="24" class="flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <div class="flex flex-col">
+          <svg width="24" height="24" class="ml-6 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <g stroke-linecap="round" stroke-width="1.5" stroke="#323232" fill="none" stroke-linejoin="round">
               <path stroke="#3C46A0" d="M21 21a.1.1 0 110 0 .1.1 0 010 0M21 12a.1.1 0 110 0 .1.1 0 010 0M21 16.4a.1.1 0 110 .2.1.1 0 010-.2M21 7.4a.1.1 0 110 .2.1.1 0 010-.2M16.6 21a.1.1 0 11-.2 0 .1.1 0 01.2 0M3 3a.1.1 0 110 0 .1.1 0 010 0M21 3a.1.1 0 110 0 .1.1 0 010 0M12 3a.1.1 0 110 0 .1.1 0 010 0M7.6 3a.1.1 0 11-.2 0 .1.1 0 01.2 0M16.6 3a.1.1 0 11-.2 0 .1.1 0 01.2 0M3 7.4a.1.1 0 110 .2.1.1 0 010-.2M10.2 21H4.8c-1 0-1.8-.8-1.8-1.8v-5.4c0-1 .8-1.8 1.8-1.8h5.4c1 0 1.8.8 1.8 1.8v5.4c0 1-.8 1.8-1.8 1.8zM11.5 12.5L16 8M16 12V8M12 8h4"/>
             </g>
           </svg>
-          <div class="ml-3">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+          <div class="mt-3 ml-6">
+            <dt class="this text-lg leading-6 font-bold text-gray-900 this">
               Scale
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -90,12 +90,12 @@ cobalt{% extends "_includes/default.njk" %}
           </div>
         </div>
 
-        <div class="flex">
-          <svg width="24" height="24" class="flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <div class="flex flex-col">
+          <svg width="24" height="24" class="ml-6 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path d="M8 10V7C8 4.791 9.791 3 12 3C14.209 3 16 4.791 16 7V10M17 21H7C5.895 21 5 20.105 5 19V12C5 10.895 5.895 10 7 10H17C18.105 10 19 10.895 19 12V19C19 20.105 18.105 21 17 21ZM9 15.541C8.997 15.541 8.995 15.543 8.995 15.546C8.995 15.549 8.997 15.551 9 15.551C9.003 15.551 9.005 15.549 9.005 15.546C9.005 15.543 9.003 15.541 9 15.541ZM12.005 15.541C12.002 15.541 12 15.543 12 15.546C12 15.549 12.003 15.551 12.005 15.551C12.008 15.551 12.01 15.549 12.01 15.546C12.01 15.543 12.008 15.541 12.005 15.541ZM15 15.541C14.997 15.541 14.995 15.543 14.995 15.546C14.995 15.549 14.997 15.551 15 15.551C15.003 15.551 15.005 15.549 15.005 15.546C15.005 15.543 15.003 15.541 15 15.541Z" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <div class="ml-3">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+          <div class="mt-3 ml-6">
+            <dt class="this text-lg leading-6 font-bold text-gray-900">
               Security
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -104,13 +104,13 @@ cobalt{% extends "_includes/default.njk" %}
           </div>
         </div>
 
-        <div class="flex">
-          <svg width="24" height="24"  class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <div class="flex flex-col">
+          <svg width="24" height="24"  class="ml-6 flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path d="M12.967 3L4.75 14H12L11.033 21L19.25 10H12L12.967 3Z" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
 
-          <div class="ml-3">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+          <div class="mt-3 ml-6">
+            <dt class="this text-lg leading-6 font-bold text-gray-900">
               Speed
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -119,13 +119,13 @@ cobalt{% extends "_includes/default.njk" %}
           </div>
         </div>
 
-        <div class="flex">
-          <svg width="24" height="24" class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <div class="flex flex-col">
+          <svg width="24" height="24" class="ml-6 flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path d="M11 15.9H3.9C2.85 15.9 2 15.05 2 14V4.9C2 3.85 2.85 3 3.9 3H19.1C20.15 3 21 3.85 21 4.9V10M6 13H5M18 6H17M19.778 16.111L17.556 18.333L16.222 17M13.179 7.971C14.106 8.898 14.106 10.402 13.179 11.33C12.252 12.257 10.748 12.257 9.82 11.33C8.893 10.403 8.893 8.899 9.82 7.971C10.748 7.043 12.252 7.043 13.179 7.971ZM18 21C15.791 21 14 19.209 14 17C14 14.791 15.791 13 18 13C20.21 13 22 14.791 22 17C22 19.209 20.21 21 18 21Z" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
 
-          <div class="ml-3">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+          <div class="mt-3 ml-6">
+            <dt class="this text-lg leading-6 font-bold text-gray-900">
               Low-Cost
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -134,12 +134,12 @@ cobalt{% extends "_includes/default.njk" %}
           </div>
         </div>
 
-        <div class="flex">
-          <svg width="24" height="24" class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <div class="flex flex-col">
+          <svg width="24" height="24" class="ml-6 flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path d="M3 15H8M8 18H5M8 21H7M11.718 7.985V12.636L15.374 14.865M3.059 11C3.557 6.501 7.368 3 12 3C16.971 3 21 7.029 21 12C21 16.971 16.971 21 12 21" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <div class="ml-3">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+          <div class="mt-3 ml-6">
+            <dt class="this text-lg leading-6 font-bold text-gray-900">
               Efficiency
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -148,12 +148,12 @@ cobalt{% extends "_includes/default.njk" %}
           </div>
         </div>
 
-        <div class="flex">
-          <svg width="24" height="24" class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <div class="flex flex-col">
+          <svg width="24" height="24" class="ml-6 flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path d="M8.25 6L15.007 5.987C16.67 5.984 18.019 7.335 18.012 8.998V9.012C18.005 10.664 16.664 12 15.013 12H9.999C8.343 12 7 13.343 7 14.999C7 16.656 8.344 17.999 10.001 17.998L20 17.995M20 17.995L18.003 19.992M20 17.995L18.003 15.997M7.59099 4.40901C8.46967 5.28769 8.46967 6.71231 7.59099 7.59099C6.71231 8.46967 5.28769 8.46967 4.40901 7.59099C3.53033 6.71231 3.53033 5.28769 4.40901 4.40901C5.28769 3.53033 6.71231 3.53033 7.59099 4.40901Z" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <div class="ml-3">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+          <div class="mt-3 ml-6">
+            <dt class="this text-lg leading-6 font-bold text-gray-900">
               Flexibility
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -162,13 +162,13 @@ cobalt{% extends "_includes/default.njk" %}
           </div>
         </div>
 
-        <div class="flex">
-          <svg width="24" height="24" class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <div class="flex flex-col">
+          <svg width="24" height="24" class="ml-6 flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path d="M18 10H16.29M18 14H16.29M7.71 10H6M7.71 14H6M10 6V7.71M14 6V7.71M10 16.29V18M14 16.29V18M8.81856 7.714H15.1804C15.7905 7.714 16.285 8.20853 16.285 8.81856V15.1804C16.285 15.7905 15.7905 16.285 15.1804 16.285H8.81856C8.20853 16.285 7.714 15.7905 7.714 15.1804V8.81856C7.714 8.20853 8.20853 7.714 8.81856 7.714ZM10.286 10.286H13.715V13.715H10.286V10.286ZM5.7614 3H18.2386C19.7637 3 21 4.23632 21 5.7614V18.2386C21 19.7637 19.7637 21 18.2386 21H5.7614C4.23632 21 3 19.7637 3 18.2386V5.7614C3 4.23632 4.23632 3 5.7614 3Z" stroke="#3C46A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
 
-          <div class="ml-3">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+          <div class="mt-3 ml-6">
+            <dt class="this text-lg leading-6 font-bold text-gray-900">
               Technology Enabled
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -186,9 +186,9 @@ cobalt{% extends "_includes/default.njk" %}
     </h2>
 
     <div class="mt-16">
-      <div class="sm:hidden">
+      <div class="sm:hidden bg-gray-100">
         <label for="tabs" class="sr-only">Select a tab</label>
-        <select id="tabs" name="tabs" class="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+        <select id="tabs" name="tabs" class="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md mb-8">
           <option selected>Envelope Scanner</option>
           <option>Document scans (coming soon)</option>
           <option>Text transcription (coming soon)</option>
@@ -196,9 +196,9 @@ cobalt{% extends "_includes/default.njk" %}
         </select>
       </div>
       <div class="hidden sm:block">
-        <div class="border-b border-gray-200">
-          <nav class="-mb-px flex" aria-label="Tabs">
-            <a href="#" class="bg-black text-white w-1/4 py-6 px-1 text-left font-bold" aria-current="page">
+        <div class="">
+          <nav class="flex max-w-7xl space-y-10 max-w-7xl mx-auto sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8" aria-label="Tabs">
+            <a href="#" class="that py-4 bg-black text-white text-left font-bold" aria-current="page">
               <div class="flex">
                 <svg class="ml-4" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M20.121 19.15C21.293 17.978 21.293 16.079 20.121 14.907C18.95 13.735 17.05 13.735 15.878 14.907C14.706 16.079 14.706 17.978 15.878 19.15C17.05 20.322 18.949 20.322 20.121 19.15ZM20.121 19.15L22 21.03M20 11.028V6.03895M20 6.03895C20 6.70495 19.669 7.32995 19.118 7.70395L13.762 11.334C12.397 12.259 10.605 12.259 9.24 11.334L3.883 7.70295C3.331 7.32895 3 6.70595 3 6.03895C3 4.92795 3.9 4.02795 5.011 4.02795H17.989C19.1 4.02795 20 4.92795 20 6.03895ZM11 17.028H5C3.895 17.028 3 16.133 3 15.028V5.99995" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -206,7 +206,7 @@ cobalt{% extends "_includes/default.njk" %}
                 <span class="ml-3">Envelope scanner</span>
               </div>
             </a>
-            <a href="#" class="border-indigo-500 text-gray-500 w-1/4 py-6 px-1 text-left font-bold" aria-current="page">
+            <a href="#" class="that py-4 border-indigo-500 text-gray-500 text-left font-bold" aria-current="page">
               <div class="flex">
                 <svg class="ml-4" opacity="0.5" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 15V19C5 20.105 5.895 21 7 21H17C18.105 21 19 20.105 19 19V15M19 9V7.828C19 7.298 18.789 6.789 18.414 6.414L15.586 3.586C15.211 3.211 14.702 3 14.172 3H7C5.895 3 5 3.895 5 5V9M14 12H16M19 12H21M8.4 12H10.4M3 12H5" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -217,7 +217,7 @@ cobalt{% extends "_includes/default.njk" %}
                 </span>
               </div>
             </a>
-            <a href="#" class="border-indigo-500 text-gray-500 w-1/4 py-6 px-1 text-left font-bold" aria-current="page">
+            <a href="#" class="that py-4 border-indigo-500 text-gray-500 text-left font-bold" aria-current="page">
               <div class="flex">
                 <svg class="ml-4" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g opacity="0.5">
@@ -230,7 +230,7 @@ cobalt{% extends "_includes/default.njk" %}
                 </span>
               </div>
             </a>
-            <a href="#" class="border-indigo-500 text-gray-500 w-1/4 py-6 px-1 text-left font-bold" aria-current="page">
+            <a href="#" class="that py-4 border-indigo-500 text-gray-500 text-left font-bold" aria-current="page">
               <div class="flex">
                 <svg opacity="0.5" class="ml-4" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M21 16.014L16.707 11.721C16.316 11.33 15.683 11.33 15.293 11.721L11 16.014M16 21.014L9.707 14.721C9.316 14.33 8.683 14.33 8.293 14.721L3.446 19.568M18 21.014H6C4.343 21.014 3 19.671 3 18.014V6.01404C3 4.35704 4.343 3.01404 6 3.01404H18C19.657 3.01404 21 4.35704 21 6.01404V18.014C21 19.671 19.657 21.014 18 21.014ZM9.26517 8.74887C9.41162 8.89531 9.41162 9.13275 9.26517 9.2792C9.11872 9.42564 8.88129 9.42564 8.73484 9.2792C8.58839 9.13275 8.58839 8.89531 8.73484 8.74887C8.88129 8.60242 9.11872 8.60242 9.26517 8.74887Z" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -246,7 +246,7 @@ cobalt{% extends "_includes/default.njk" %}
       </div>
     </div>
   </div>
-  <main class="lg:relative bg-black">
+  <main class="lg:relative bg-black z-10">
     <div class="mx-auto max-w-7xl w-full pt-12 pb-20 text-center lg:py-32 lg:text-left">
       <div class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
         <h6 class="font-mono uppercase text-gray-400 text-xs mb-4">
@@ -290,7 +290,7 @@ cobalt{% extends "_includes/default.njk" %}
 
   <div class="bg-white">
     <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
-      <div class="pb-8">
+      <div class="pb-8 ml-6">
         <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
           Use cases
         </h2>
@@ -299,9 +299,9 @@ cobalt{% extends "_includes/default.njk" %}
         </p>
       </div>
       <dl class="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
-        <div class="flex">
+        <div class="flex ml-6">
           <div class="mb-8">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+            <dt class="text-lg leading-6 font-bold text-gray-900 this">
               Logo identification
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -310,9 +310,9 @@ cobalt{% extends "_includes/default.njk" %}
           </div>
         </div>
 
-        <div class="flex">
+        <div class="flex ml-6">
           <div class="mb-8">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+            <dt class="text-lg leading-6 font-bold text-gray-900 this">
               User content flagging
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -321,9 +321,9 @@ cobalt{% extends "_includes/default.njk" %}
           </div>
         </div>
 
-        <div class="flex">
+        <div class="flex ml-6">
           <div class="mb-8">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+            <dt class="text-lg leading-6 font-bold text-gray-900 this">
               Brand safety monitoring
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -332,9 +332,9 @@ cobalt{% extends "_includes/default.njk" %}
           </div>
         </div>
 
-        <div class="flex">
+        <div class="flex ml-6">
           <div class="mb-8">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+            <dt class="text-lg leading-6 font-bold text-gray-900 this">
               Receipt parsing
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -343,9 +343,9 @@ cobalt{% extends "_includes/default.njk" %}
           </div>
         </div>
 
-        <div class="flex">
+        <div class="flex ml-6">
           <div class="mb-8">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+            <dt class="text-lg leading-6 font-bold text-gray-900 this">
               Ad identification
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -354,9 +354,9 @@ cobalt{% extends "_includes/default.njk" %}
           </div>
         </div>
 
-        <div class="flex">
+        <div class="flex ml-6">
           <div class="mb-8">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+            <dt class="text-lg leading-6 font-bold text-gray-900 this">
               Meeting transcription
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -365,9 +365,9 @@ cobalt{% extends "_includes/default.njk" %}
           </div>
         </div>
 
-        <div class="flex">
+        <div class="flex ml-6">
           <div class="mb-8">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+            <dt class="text-lg leading-6 font-bold text-gray-900 this">
               Contextual ad delivery
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -376,9 +376,9 @@ cobalt{% extends "_includes/default.njk" %}
           </div>
         </div>
 
-        <div class="flex">
+        <div class="flex ml-6">
           <div class="mb-8">
-            <dt class="text-lg leading-6 font-bold text-gray-900">
+            <dt class="text-lg leading-6 font-bold text-gray-900 this">
               Planogram compliance
             </dt>
             <dd class="mt-2 text-base text-gray-500">
@@ -393,7 +393,7 @@ cobalt{% extends "_includes/default.njk" %}
   <!-- Testimonials -->
   <section class="">
     <div class="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
-      <div class="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 lg:pr-16">
+      <div class="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 lg:pr-16 ml-6">
         <div class="md:flex-shrink-0">
           <img class="h-8" src="src/images/logo-testimonial-1.svg" alt="Toyota">
         </div>
@@ -416,7 +416,7 @@ cobalt{% extends "_includes/default.njk" %}
           </footer>
         </blockquote>
       </div>
-      <div class="py-12 px-4 sm:px-6 md:py-16 md:pr-0 md:pl-10 lg:pl-16">
+      <div class="py-12 px-4 sm:px-6 md:py-16 md:pr-0 md:pl-10 lg:pl-12">
         <div class="md:flex-shrink-0">
           <img class="h-8" src="src/images/logo-testimonial-2.svg" alt="Voyage">
         </div>
