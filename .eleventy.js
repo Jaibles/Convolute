@@ -3,6 +3,7 @@ const htmlmin = require("html-minifier");
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
+    "./node_modules/highcharts/dist/highcharts.js": "./js/highcharts.js",
   });
 
   eleventyConfig.setUseGitIgnore(false);
