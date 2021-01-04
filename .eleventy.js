@@ -11,6 +11,7 @@ module.exports = function (eleventyConfig) {
  
   eleventyConfig.addPassthroughCopy({ "./_tmp/style.css": "./style.css" });
 
+  eleventyConfig.addPassthroughCopy('js/highcharts.js');
   eleventyConfig.addPassthroughCopy('src/images');
   eleventyConfig.addPassthroughCopy('src/fonts');
 
