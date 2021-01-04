@@ -18,7 +18,8 @@
   </head>
   <body>
     <div class="h-screen flex overflow-hidden bg-white" x-data="{open:false}">
-      <div x-show="open" >
+      <!-- Static sidebar for mobile -->
+      <div x-show="open">
         <div class="fixed inset-0 flex z-40">
           <div class="fixed inset-0">
             <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
@@ -27,7 +28,6 @@
             <div class="absolute top-0 right-0 -mr-12 pt-2">
               <button @click="open = false" type="button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                 <span class="sr-only">Close sidebar</span>
-                <!-- Heroicon name: x -->
                 <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -94,7 +94,6 @@
       <!-- Static sidebar for desktop -->
       <div class="hidden lg:flex lg:flex-shrink-0">
         <div class="flex flex-col w-56">
-          <!-- Sidebar component, swap this element with another sidebar if you like -->
           <div class="flex flex-col h-0 flex-1 bg-black">
             <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
               <div class="flex items-center flex-shrink-0 px-4">
@@ -104,7 +103,7 @@
                 </svg>
               </div>
               <nav class="mt-5 flex-1" aria-label="Sidebar">
-                <div class="px-2 space-y-1">
+                <div class="px-2">
                   <a href="/app" class="{{ 'bg-gray-900 text-white' if '/app' in page.url }} hover:bg-gray-800 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                     <svg class="text-gray-300 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -112,6 +111,9 @@
                     <span class="mt-0.5">Dashboard</span>
                   </a>
 
+                  <div class="mt-8 mb-2 ml-2">
+                    <h6 class="text-gray-700 text-xs font-bold uppercase">Projects</h6>
+                  </div>
                   <a href="/tasks/task1" class="{{ 'bg-gray-900 text-white hover:bg-gray-800' if '/tasks' in page.url }} hover:bg-gray-900 text-gray-200 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                     <svg class="text-gray-300 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

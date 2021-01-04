@@ -71,7 +71,7 @@ var myChart = Highcharts.chart('basic-line2', {
  },
 
  series: [{
-   name: 'Tasks Complete Over Time',
+   name: 'Tasks Accepted Over Time',
    data: [12916, 15064, 18742, 21851, 22490, 30282, 38121, 40434],
    marker: {
      symbol: 'circle'
