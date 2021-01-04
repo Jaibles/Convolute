@@ -1,0 +1,71 @@
+{% extends "_includes/app.njk" %}
+ 
+{% block title %}Convolute{% endblock %}
+ 
+{% block content %}
+  <div>
+    <div class="">
+      <div class="border-b border-gray-200">
+        <div class="inset-0 px-4 sm:px-6 lg:px-8">
+          <nav class="-mb-px flex space-x-4" aria-label="Tabs">
+            <a href="/app" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+              Overview
+            </a>
+            <a href="/app" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+              Quality
+            </a>
+            <a href="/app-quality" class="border-cobalt-500 text-cobalt-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" aria-current="page">
+              Tasks
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last" tabindex="0">
+    <!-- Start main area-->
+    <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
+      <div class="h-full">
+        <div>
+          <h3 class="text-lg leading-6 font-bold text-gray-900">
+            Tasks
+          </h3>
+          <div class="mt-4 relative border rounded-md order-first xl:flex xl:flex-col flex-shrink-0 w-88 border-r border-gray-100">
+            <div class="h-full">
+              <ul class="divide-y divide-gray-100">
+              {%- for task in collections.task | reverse -%}
+                <li {% if page.url == task.url %} class="bg-cobalt-50 hover:bg-cobalt-50"{% endif %}>
+                  <a href="{{ task.url }}" class="block hover:bg-gray-50">
+                    <div class="px-4 py-3 sm:px-4">
+                      <div class="flex items-center justify-between">
+                        <p class="text-sm font-medium text-black truncate {% if page.url == task.url %}text-cobalt-500{% endif %}">
+                          {{ task.data.title }}
+                        </p>
+                        <div class="ml-2 flex-shrink-0 flex">
+                          <span class="{{ task.data.status }}">
+                            <div class="mt-0.5">{{ task.data.status }}</div>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="mt-1 sm:flex sm:justify-between">
+                        <div class="sm:flex">
+                          <p class="flex font-mono items-center text-xs text-gray-500">
+                            <time datetime="{{ date }}">{{ task.date.toUTCString() }}</time>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              {%- endfor -%}
+              </ul>
+            </div>
+            <!-- End secondary column -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End main area -->
+  </main>
+{% endblock %}
