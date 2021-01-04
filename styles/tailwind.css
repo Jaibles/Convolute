@@ -218,6 +218,11 @@ a, button {
   fill: #97A0AF;
 }
 
+.highcharts-grid-line {
+  fill: #f7f7fc;
+  stroke: #f7f7fc;
+}
+
 .highcharts-yaxis-labels {
   fill: #878F9D !important;
   cursor: default;
@@ -241,6 +246,7 @@ a, button {
 
 .highcharts-minor-grid-line {
   stroke: #e5e5e5;
+  stroke-width: 1px;
 }
 
 .highcharts-crosshair-thin {
