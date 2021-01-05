@@ -36,20 +36,30 @@ body {
   font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 }
 
-.Accepted {
-  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs font-medium bg-mosque-200 text-mosque-800;
+.badge {
+  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs bg-gray-200 text-gray-800;
   font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
   font-size: 10px;
 }
 
+.Accepted {
+  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs bg-mosque-200 text-mosque-800;
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  font-size: 10px;
+}
+
+.Ready {
+  @apply badge;
+}
+
 .Fixed {
-  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs font-medium bg-mustard-200 text-mustard-800;
+  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs bg-mustard-200 text-mustard-800;
   font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
   font-size: 10px;
 }
 
 .Rejected {
-  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs font-medium bg-red-200 text-red-800;
+  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs bg-red-200 text-red-800;
   font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
   font-size: 10px;
 }
