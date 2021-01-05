@@ -32,6 +32,19 @@ body {
   }
 }
 
+.tooltip .tooltip-text {
+  visibility: hidden;
+  text-align: center;
+  padding: 2px 6px;
+  position: absolute;
+  z-index: 100;
+  margin-left: -15px;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+}
+
 .font-mono {
   font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 }

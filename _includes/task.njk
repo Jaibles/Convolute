@@ -22,21 +22,20 @@
         {% include 'partial/app-header-mobile.njk' %}
 
         <div class="h-full">
-          <div class="">
-            <div class="border-b bg-gray-50 border-gray-200">
-              <div class="inset-0 px-4 sm:px-6 lg:px-8">
-                <nav class="-mb-px flex space-x-4" aria-label="Tabs">
-                  <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                    Quality
-                  </a>
-                  <a href="#" class="border-cobalt-500 text-cobalt-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" aria-current="page">
-                    Tasks
-                  </a>
-                </nav>
-              </div>
+          <div class="border-b bg-gray-50 border-gray-200">
+            <div class="inset-0 px-4 sm:px-6 lg:px-8">
+              <nav class="-mb-px flex space-x-2" aria-label="Tabs">
+                <a href="/tasks/quality" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+                  Overview
+                </a>
+                <a href="/tasks/task10" class="border-cobalt-500 text-cobalt-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" aria-current="page">
+                  Tasks
+                </a>
+              </nav>
             </div>
           </div>
-          <div class="flex-1 relative z-0 flex overflow-hidden h-full">
+
+          <div class="flex-1 z-0 flex overflow-hidden h-full">
             <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last" tabindex="0">
               <!-- Start main area-->
               <div class="absolute inset-0 py-4">
@@ -59,19 +58,27 @@
                       {% endif %}
                     </div>
 
-                    <div class="mt-3 sm:mt-0 sm:ml-4">
-                      <button type="button" class="inline-flex items-center border px-5 py-2 border-cobalt-500 rounded-md text-sm text-cobalt-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
-                        Edit
-                      </button>
-                    </div>
-
-                    {# {% if audit == 'Rejected' %}
+                    {% if audit != 'Ready for Audit' %}
                       <div class="mt-3 sm:mt-0 sm:ml-4">
-                        <button type="button" class="inline-flex items-center border px-5 py-3 border-gray-200 rounded-md text-sm text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
+                        <button type="button" class="inline-flex items-center border px-5 py-2 border-cobalt-500 rounded-md text-sm text-cobalt-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
                           Edit
                         </button>
                       </div>
-                    {% endif %} #}
+                    {% endif %}
+
+                    {% if audit == 'Ready for Audit' %}
+                      <div class="mt-3 sm:mt-0 sm:ml-4">
+                        <button type="button" class="inline-flex items-center px-5 py-3 bg-cobalt-500 rounded-md text-sm text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
+                          Accept
+                        </button>
+                        <button type="button" class="inline-flex items-center border px-5 py-3 border-gray-500 rounded-md text-sm text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
+                          Fix
+                        </button>
+                        <button type="button" class="inline-flex items-center border px-5 py-3 border-red-500 rounded-md text-sm text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
+                          Reject
+                        </button>
+                      </div>
+                    {% endif %}
                   </div>
 
                   <div class="grid grid-cols-3 gap-1">
@@ -181,33 +188,21 @@
               <div class="h-full">
                 <div class="bg-white overflow-hidden">
 
-                  <div class="flex justify-between items-center px-4 py-2 border-b border-gray-100">
-                    <div>
-                      <div class="sm:hidden">
-                        <label for="tabs" class="sr-only">Select a tab</label>
-                        <select id="tabs" name="tabs" class="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
-                          <option>Queued</option>
-                          <option selected>Completed</option>
-                        </select>
-                      </div>
-                      <div class="hidden sm:block">
-                        <nav class="flex space-x-1 p-1 bg-gray-100 inline-flex rounded-md" aria-label="Tabs">
-                          <a href="#" class="text-gray-500 bg-gray-100 hover:text-gray-700 px-3 py-2 font-medium text-sm rounded-md">
-                            Queued
-                          </a>
-                          <!-- Current: "bg-indigo-100 text-indigo-700", Default: "text-gray-500 hover:text-gray-700" -->
-                          <a href="#" class="bg-cobalt-700 text-cobalt-100 px-3 py-2 font-medium text-sm rounded-md" aria-current="page">
-                            Completed
-                          </a>
-                        </nav>
-                      </div>
-                    </div>
-                  </div>
+                  {# <div class="flex justify-between items-center px-4 py-2 border-b border-gray-100">
+                    <nav class="flex space-x-1 p-1 bg-gray-100 inline-flex rounded" aria-label="Tabs">
+                      <a href="#" class="text-gray-500 bg-gray-100 hover:text-gray-700 px-3 py-2 text-sm rounded">
+                        Queued
+                      </a>
+                      <a href="#" class="bg-cobalt-700 text-cobalt-100 px-3 py-2 text-sm rounded">
+                        Completed
+                      </a>
+                    </nav>
+                  </div> #}
 
                   <ul class="divide-y divide-gray-100">
                   {%- for task in collections.task | reverse -%}
-                    <li {% if page.url == task.url %} class="bg-cobalt-50 hover:bg-cobalt-50"{% endif %}>
-                      <a href="{{ task.url }}" class="block hover:bg-gray-50">
+                    <li {% if page.url == task.url %} class="bg-cobalt-100" {% endif %}>
+                      <a href="{{ task.url }}" class="block hover:bg-cobalt-100">
                         <div class="px-4 py-3 sm:px-4">
                           <div class="flex items-center justify-between">
                             <p class="text-sm font-medium text-black truncate {% if page.url == task.url %}text-cobalt-500{% endif %}">
