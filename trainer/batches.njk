@@ -1,4 +1,4 @@
-{% extends "_includes/app.njk" %}
+{% extends "_includes/app-trainer.njk" %}
  
 {% block title %}Convolute{% endblock %}
  
@@ -10,10 +10,10 @@
       <div class="border-b bg-gray-50 border-gray-200">
         <div class="inset-0 px-4 sm:px-6 lg:px-8">
           <nav class="-mb-px flex space-x-2" aria-label="Tabs">
-            <a href="/tasks/quality" class="{{ 'border-cobalt-500 border-cobalt-500 text-cobalt-600' if '/tasks/quality' in page.url }} border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 text-sm">
-              Overview
+            <a href="/trainer/batches" class="{{ 'border-cobalt-500 border-cobalt-500 text-cobalt-600' if '/trainer/batches' in page.url }} border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 text-sm">
+              Batches
             </a>
-            <a href="/tasks/task10" class="{{ 'border-cobalt-500 border-cobalt-500 text-cobalt-600' if '/tasks/task' in page.url }} border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 text-sm">
+            <a href="/trainer/task10" class="{{ 'border-cobalt-500 border-cobalt-500 text-cobalt-600' if '/trainer/task' in page.url }} border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 text-sm">
               Tasks
             </a>
           </nav>
@@ -27,7 +27,7 @@
         <div>
           <div class="flex justify-between items-end">
             <h3 class="text-xl leading-6 font-bold text-gray-900">
-              Quality Metrics
+              Daily Metrics
             </h3>
             <div class="flex flex-row items-center space-x-2">
               <div class="relative w-24 rounded shadow-sm">
@@ -47,11 +47,11 @@
             <div>
               <div class="px-4 py-5 sm:p-6">
                 <h6 class="font-mono uppercase text-xs text-black mt-1">
-                  Model Accuracy
+                  Tasks Completed
                 </h6>
                 <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                   <div class="flex items-baseline text-2xl font-semibold text-black">
-                    82.2%
+                    3,214
                   </div>
                 </dd>
               </div>
@@ -60,24 +60,11 @@
             <div>
               <div class="px-4 py-5 sm:p-6">
                 <h6 class="font-mono uppercase text-xs text-black mt-1">
-                  Tasks Verified
+                  Tasks Remaining
                 </h6>
                 <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                   <div class="flex items-baseline text-2xl font-semibold text-black">
-                    33,214
-                  </div>
-                </dd>
-              </div>
-            </div>
-
-            <div>
-              <div class="px-4 py-5 sm:p-6">
-                <h6 class="font-mono uppercase text-xs text-mosque-500 mt-1">
-                  Accepted
-                </h6>
-                <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
-                  <div class="flex items-baseline text-2xl font-semibold text-mosque-500">
-                    29,518
+                    3,214
                   </div>
                 </dd>
               </div>
@@ -117,7 +104,7 @@
           </h3>
 
           <ul class="divide-y divide-gray-100 border border-gray-100 rounded">
-          {%- for task in collections.task | reverse -%}
+          {%- for task in collections.trainertask | reverse -%}
             <li {% if page.url == task.url %} class="bg-cobalt-50 hover:bg-cobalt-50"{% endif %}>
               <a href="{{ task.url }}" class="block hover:bg-gray-50">
                 <div class="px-4 py-3 sm:px-4 items-center">

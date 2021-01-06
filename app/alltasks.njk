@@ -15,20 +15,20 @@
               Tasks
             </h3>
             <div class="flex flex-row items-center space-x-2">
-              <div class="relative w-24 rounded-md shadow-sm">
-                <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded-md">
+              <div class="relative w-24 rounded shadow-sm">
+                <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded">
                   <option class="py-1" disabled selected>Date</option>
                 </select>
               </div>
-              <div class="relative w-24 rounded-md shadow-sm">
-                <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded-md">
+              <div class="relative w-24 rounded shadow-sm">
+                <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded">
                   <option class="py-1" disabled selected>Type</option>
                   <option class="py-1">Envelope scans</option>
                   <option class="py-1">Image processing</option>
                 </select>
               </div>
-              <div class="relative w-24 rounded-md shadow-sm">
-                <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded-md">
+              <div class="relative w-24 rounded shadow-sm">
+                <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded">
                   <option class="py-1" disabled selected>Status</option>
                   <option class="py-1">Accepted</option>
                   <option class="py-1">In progress</option>
@@ -37,8 +37,8 @@
                   <option class="py-1">Cancelled</option>
                 </select>
               </div>
-              <div class="relative w-24 rounded-md shadow-sm">
-                <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded-md">
+              <div class="relative w-24 rounded shadow-sm">
+                <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded">
                   <option class="py-1" disabled selected>Audit</option>
                   <option class="py-1">Ready to audit</option>
                   <option class="py-1">Accepted</option>
@@ -46,14 +46,14 @@
                   <option class="py-1">Rejected</option>
                 </select>
               </div>
-              <div class="relative w-24 rounded-md shadow-sm">
-                <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded-md">
+              <div class="relative w-24 rounded shadow-sm">
+                <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded">
                   <option class="py-1" disabled selected>Batch</option>
                 </select>
               </div>
             </div>
           </div>
-          <div class="mt-4 relative border rounded-md order-first xl:flex xl:flex-col flex-shrink-0 w-88 border-r border-gray-100">
+          <div class="mt-4 relative border rounded order-first xl:flex xl:flex-col flex-shrink-0 w-88 border-r border-gray-100">
             <div class="h-full">
               <ul class="divide-y divide-gray-100">
               {%- for task in collections.task | reverse -%}

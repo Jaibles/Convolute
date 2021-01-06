@@ -15,7 +15,9 @@
     font-style: normal;
     font-display: swap;
 }
-
+html {
+ scroll-behavior: smooth;
+}
 html,
 body {
   font-family: 'Favorit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
@@ -30,6 +32,18 @@ body {
   .change {
     color: black;
   }
+}
+
+.btn {
+  @apply inline-flex items-center px-5 py-2 rounded text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500;
+}
+
+.btn-primary {
+  @apply bg-cobalt-500 text-white;
+}
+
+.btn-secondary {
+  @apply border border-gray-200 text-black;
 }
 
 .tooltip .tooltip-text {
@@ -55,8 +69,15 @@ body {
   font-size: 10px;
 }
 
-.Accepted {
+.Accepted,
+.Completed {
   @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs bg-mosque-200 text-mosque-800;
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  font-size: 10px;
+}
+
+.In {
+  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs bg-mustard-200 text-mustard-800;
   font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
   font-size: 10px;
 }
@@ -65,7 +86,8 @@ body {
   @apply badge;
 }
 
-.Fixed {
+.Fixed,
+.Queued {
   @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs bg-mustard-200 text-mustard-800;
   font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
   font-size: 10px;
