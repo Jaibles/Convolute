@@ -27,27 +27,28 @@
         <div>
           <div class="flex justify-between items-end">
             <h3 class="text-xl leading-6 font-bold text-gray-900">
-              Daily Metrics
+              Metrics
             </h3>
             <div class="flex flex-row items-center space-x-2">
               <div class="relative w-24 rounded shadow-sm">
                 <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded">
-                  <option class="py-1" disabled selected>Date</option>
+                  <option class="py-1" disabled selected>Today</option>
                 </select>
               </div>
 
-              <div class="relative w-24 rounded shadow-sm">
+              <div class="relative w-30 rounded shadow-sm">
                 <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded">
-                  <option class="py-1" disabled selected>Batch</option>
+                  <option class="py-1" disabled selected>All Batches</option>
                 </select>
               </div>
             </div>
           </div>
-          <dl class="mt-5 grid grid-cols-1 rounded-sm bg-gray-50 overflow-hidden divide-y divide-white md:grid-cols-5 md:divide-y-0 md:divide-x">
+
+          <dl class="mt-5 grid grid-cols-1 rounded-sm bg-gray-50 overflow-hidden divide-y divide-white md:grid-cols-3 md:divide-y-0 md:divide-x">
             <div>
               <div class="px-4 py-5 sm:p-6">
                 <h6 class="font-mono uppercase text-xs text-black mt-1">
-                  Tasks Completed
+                  Tasks
                 </h6>
                 <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                   <div class="flex items-baseline text-2xl font-semibold text-black">
@@ -59,12 +60,12 @@
 
             <div>
               <div class="px-4 py-5 sm:p-6">
-                <h6 class="font-mono uppercase text-xs text-black mt-1">
-                  Tasks Remaining
+                <h6 class="font-mono uppercase text-xs text-mosque-500 mt-1">
+                  Tasks Completed
                 </h6>
                 <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
-                  <div class="flex items-baseline text-2xl font-semibold text-black">
-                    3,214
+                  <div class="flex items-baseline text-2xl font-semibold text-mosque-500">
+                    2,814
                   </div>
                 </dd>
               </div>
@@ -73,28 +74,16 @@
             <div>
               <div class="px-4 py-5 sm:p-6">
                 <h6 class="font-mono uppercase text-xs text-orange-500 mt-1">
-                  Fixed
+                  Tasks Queued
                 </h6>
                 <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                   <div class="flex items-baseline text-2xl font-semibold text-orange-500">
-                    2,412
+                    1,412
                   </div>
                 </dd>
               </div>
             </div>
 
-            <div>
-              <div class="px-4 py-5 sm:p-6">
-                <h6 class="font-mono uppercase text-xs text-red-500 mt-1">
-                  Rejected
-                </h6>
-                <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
-                  <div class="flex items-baseline text-2xl font-semibold text-red-500">
-                    41
-                  </div>
-                </dd>
-              </div>
-            </div>
           </dl>
         </div>
 
@@ -130,7 +119,7 @@
                           </svg>
                           <span class="mt-0.5">12</span>
                         </span>
-                        <span class='tooltip-text bg-gray-200 p-3 -mt-6 text-xs -ml-6 rounded'>12 ready to audit</span>
+                        <span class='tooltip-text bg-gray-200 p-3 -mt-6 text-xs -ml-6 rounded'>69 Tasks</span>
                       </div>
 
                       <div class="ml-2 flex-shrink-0 flex tooltip">
@@ -140,7 +129,7 @@
                           </svg>
                           <span class="mt-0.5">51</span>
                         </span>
-                        <span class='tooltip-text bg-mosque-200 p-3 -mt-6 text-xs -ml-6 rounded'>51 accepted</span>
+                        <span class='tooltip-text bg-mosque-200 p-3 -mt-6 text-xs -ml-6 rounded'>51 Completed</span>
                       </div>
 
                       <div class="ml-2 flex-shrink-0 flex tooltip">
@@ -150,21 +139,11 @@
                           </svg>
                           <span class="mt-0.5">18</span>
                         </span>
-                        <span class='tooltip-text bg-orange-200 p-3 -mt-6 text-xs -ml-6 rounded'>18 fixed</span>
+                        <span class='tooltip-text bg-orange-200 p-3 -mt-6 text-xs -ml-6 rounded'>18 Queued</span>
                       </div>
 
-                      <div class="ml-2 flex-shrink-0 flex tooltip">
-                        <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm bg-red-100 text-red-800">
-                          <svg class="-ml-1 mr-1.5 h-2 w-2 text-orange-400" fill="currentColor" viewBox="0 0 8 8">
-                          <circle cx="4" cy="4" r="3" />
-                          </svg>
-                          <span class="mt-0.5">2</span>
-                        </span>
-                        <span class='tooltip-text bg-red-200 p-3 -mt-6 text-xs -ml-6 rounded'>2 rejected</span>
-                      </div>
-
-                      <button type="button" class="mx-6 inline-flex items-center bg-transparent rounded text-sm text-cobalt-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
-                        Audit
+                      <button type="button" class="mx-6 inline-flex items-center bg-transparent text-sm text-cobalt-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
+                        Start
                       </button>
 
                     </div>
