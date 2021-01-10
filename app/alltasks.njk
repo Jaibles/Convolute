@@ -12,7 +12,7 @@
         <div>
           <div class="flex justify-between items-end">
             <h3 class="text-xl leading-6 font-bold text-gray-900">
-              Tasks
+              All Tasks
             </h3>
             <div class="flex flex-row items-center space-x-2">
               <div class="relative w-24 rounded shadow-sm">
@@ -30,10 +30,9 @@
               <div class="relative w-24 rounded shadow-sm">
                 <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded">
                   <option class="py-1" disabled selected>Status</option>
-                  <option class="py-1">Accepted</option>
+                  <option class="py-1">Complete</option>
                   <option class="py-1">In progress</option>
                   <option class="py-1">Queued</option>
-                  <option class="py-1">Error</option>
                   <option class="py-1">Cancelled</option>
                 </select>
               </div>
@@ -46,9 +45,9 @@
                   <option class="py-1">Rejected</option>
                 </select>
               </div>
-              <div class="relative w-24 rounded shadow-sm">
+              <div class="relative w-26 rounded shadow-sm">
                 <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded">
-                  <option class="py-1" disabled selected>Batch</option>
+                  <option class="py-1" disabled selected>Project</option>
                 </select>
               </div>
             </div>
@@ -61,23 +60,27 @@
                   <a href="{{ task.url }}" class="block hover:bg-gray-50">
                     <div class="px-4 py-3 sm:px-4">
                       <div class="flex items-center justify-between">
-                        <p class="text-sm font-medium text-black truncate {% if page.url == task.url %}text-cobalt-500{% endif %}">
-                          {{ task.data.title }}
-                        </p>
+                        <div>
+                          <p class="text-sm font-medium text-black truncate {% if page.url == task.url %}text-cobalt-500{% endif %}">
+                            {{ task.data.title }}
+                          </p>
+                          <div class="mt-1 sm:flex sm:justify-between">
+                            <div class="sm:flex">
+                              <p class="flex font-mono items-center text-xs text-gray-500">
+                                <time datetime="{{ date }}">{{ task.date.toUTCString() }}</time>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
                         <div class="ml-2 flex-shrink-0 flex">
-                          <span class="badge">
+                          <span class="text-sm">
                             {{ task.data.tasktype }}
                           </span>
-                          <span class="{{ task.data.audit }}">
-                            <div class="mt-0.5">{{ task.data.audit }}</div>
-                          </span>
-                        </div>
-                      </div>
-                      <div class="mt-1 sm:flex sm:justify-between">
-                        <div class="sm:flex">
-                          <p class="flex font-mono items-center text-xs text-gray-500">
-                            <time datetime="{{ date }}">{{ task.date.toUTCString() }}</time>
-                          </p>
+                          <div class="w-32 justify-end flex">
+                            <span class="{{ task.data.audit }}">
+                              <div class="mt-0.5">{{ task.data.audit }}</div>
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>

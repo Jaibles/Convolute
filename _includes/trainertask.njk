@@ -15,223 +15,105 @@
     <script src="/js/alpine.js?v={% version %}"></script>
   </head>
   <body>
-    <div class="h-screen flex overflow-hidden bg-white" x-data="{open:false}">
-      {% include 'partial/app-sidebar-trainer.njk' %}
+    <!-- Background color split screen for large screens -->
+    <div class="fixed top-0 left-0 w-1/2 h-full bg-white" aria-hidden="true"></div>
+    <div class="fixed top-0 right-0 w-1/2 h-full bg-gray-50" aria-hidden="true"></div>
+    <div class="relative min-h-screen flex flex-col bg-gray-100">
+      <!-- Navbar -->
+      <nav class="flex-shrink-0 bg-white border-b border-gray-200">
+        <div class="max-w-9xl mx-auto px-2 sm:px-4 lg:px-8">
+          <div class="relative flex items-center justify-between h-16">
+            <!-- Logo section -->
+            <div class="flex items-center px-2 lg:px-0 xl:w-64">
+              <div class="flex-shrink-0">
+                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-300.svg" alt="Workflow">
+              </div>
+            </div>
 
-      <div class="flex flex-col min-w-0 flex-1 overflow-hidden">
-        {% include 'partial/app-header-mobile.njk' %}
+            <div class="flex lg:hidden">
+              <!-- Mobile menu button -->
+              <button class="bg-indigo-600 inline-flex items-center justify-center p-2 rounded-md text-indigo-400 hover:text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-600 focus:ring-white" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <!-- Icon when menu is closed. -->
+                <!--
+                  Heroicon name: menu-alt-1
 
-        <div class="h-full">
-          <div class="border-b bg-gray-50 border-gray-200">
-            <div class="inset-0 px-4 sm:px-6 lg:px-8">
-              <nav class="-mb-px flex space-x-2" aria-label="Tabs">
-                <a href="/trainer/batches" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                  Batches
-                </a>
-                <a href="/trainer/task10" class="border-cobalt-500 text-cobalt-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" aria-current="page">
-                  Tasks
-                </a>
-              </nav>
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                </svg>
+                <!-- Icon when menu is open. -->
+                <!--
+                  Heroicon name: x
+
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <!-- Links section -->
+            <div class="hidden lg:block lg:w-80">
+              <div class="flex items-center justify-end">
+                <div class="flex">
+                  <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white">Documentation</a>
+                  <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white">Support</a>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="flex-1 z-0 flex overflow-hidden h-full">
-            <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last" tabindex="0">
+        <!--
+          Mobile menu, toggle classes based on menu state.
+
+          Menu open: "block", Menu closed: "hidden"
+        -->
+        <div class="hidden lg:hidden">
+          <div class="px-2 pt-2 pb-3">
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800">Dashboard</a>
+            <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Support</a>
+          </div>
+          <div class="pt-4 pb-3 border-t border-indigo-800">
+            <div class="px-2">
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Your Profile</a>
+              <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Settings</a>
+              <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Sign out</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- 3 column wrapper -->
+      <div class="bg-gray-100 vh-100 flex-grow w-full lg:flex">
+        <!-- Left sidebar & main wrapper -->
+        <div class="flex-1 min-w-0 bg-white xl:flex">
+          <div class="bg-gray-100 lg:min-w-0 lg:flex-1">
+            <div class="h-full py-6 px-4 sm:px-6 lg:px-8">
               <!-- Start main area-->
-              <div class="absolute inset-0 py-4">
-                <div class="h-full">
-                  <div class="pb-4 px-4 border-b border-gray-100 sm:flex sm:items-center sm:justify-between">
-                    <div>
-                      <div class="flex items-center">
-                        <h3 class="text-lg leading-6 font-bold text-gray-900">
-                          {{ title }}
-                        </h3>
-                        <span class="{{ status }} h-5 py-1">
-                          <div class="mt-0.5">{{ status }}</div>
-                        </span>
-                      </div>
-
-                      {% if date %}
-                      <p class="mt-1 font-mono max-w-4xl text-xs text-gray-500">
-                        <time datetime="{{ date }}">{{ date.toUTCString() }}</time>
-                      </p>
-                      {% endif %}
-                    </div>
-
-                    {% if status == 'Completed' %}
-                      <div class="mt-3 sm:mt-0 sm:ml-4">
-                        <button type="button" class="btn btn-secondary">
-                          Edit
-                        </button>
-                      </div>
-                    {% endif %}
-
-                    {% if status == 'Queued' %}
-                      <div class="mt-3 sm:mt-0 sm:ml-4">
-                        <button type="button" class="btn btn-primary">
-                          Complete
-                        </button>
-                      </div>
-                    {% endif %}
-                  </div>
-
-                  <div class="grid grid-cols-3 gap-1">
-                    <div class="col-span-2">
-                      <h3 class="m-4 font-bold">Image</h3>
-                      <div class="relative flex items-center justify-center">
-                        <div class="w-full bg-gray-200">
-                          {% block content %}
-                            {{ content | safe }}
-                          {% endblock %}
-                        </div>
-                        <img class="absolute w-100 h-100 object-cover" src="/src/images/envelope-overlay-trainer.svg" alt="">
-                      </div>
-                    </div>
-                    <div>
-                      <div class="mt-4 mx-2 flex justify-between items-center">
-                        <h3 class="font-bold">Results</h3>
-                        <h6 class="text-xs text-gray-500 font-mono font-bold uppercase">accuracy</h6>
-                      </div>
-                      <div class="space-y-6 pt-4 px-2">
-                        <div class="">
-                          <div class="flex justify-between">
-                            <label for="company_website" class="inline-flex px-1 bg-mustard-500 block font-mono uppercase text-xs text-black">
-                              IBM Code
-                            </label>
-                            <label for="company_website" class="inline-flex px-1 bg-black block font-mono uppercase text-xs text-white">
-                              1.0
-                            </label>
-                          </div>
-                          <div class="mt-1 flex rounded">
-                            <input type="text" class="focus:ring-indigo-500 px-2 py-2 bg-gray-100 focus:border-indigo-500 flex-1 block w-full  sm:text-sm border-gray-300"
-                              value="{{ ibmcode }}"
-                            >
-                          </div>
-                        </div>
-                        <div class="">
-                          <div class="flex justify-between">
-                            <label for="company_website" class="inline-flex px-1 bg-cobalt-500 block font-mono uppercase text-xs text-white">
-                              Sender name
-                            </label>
-                            <label for="company_website" class="inline-flex px-1 bg-black block font-mono uppercase text-xs text-white">
-                              0.95
-                            </label>
-                          </div>
-                          <div class="mt-1 flex rounded">
-                            <input type="text" class="focus:ring-indigo-500 px-2 py-2 bg-gray-100 focus:border-indigo-500 flex-1 block w-full  sm:text-sm border-gray-300"
-                              value="{{ sendername }}"
-                            >
-                          </div>
-                        </div>
-                        <div class="">
-                          <div class="flex justify-between">
-                            <label for="company_website" class="inline-flex px-1 bg-cobalt-500 block font-mono uppercase text-xs text-white">
-                              Sender address
-                            </label>
-                            <label for="company_website" class="inline-flex px-1 bg-black block font-mono uppercase text-xs text-white">
-                              0.80
-                            </label>
-                          </div>
-                          <div class="mt-1 flex rounded">
-                            <input type="text" class="focus:ring-indigo-500 px-2 py-2 bg-gray-100 focus:border-indigo-500 flex-1 block w-full  sm:text-sm border-gray-300"
-                              value="{{ senderaddress }}"
-                            >
-                          </div>
-                        </div>
-                        <div class="">
-                          <div class="flex justify-between">
-                            <label for="company_website" class="inline-flex px-1 bg-orange-500 block font-mono uppercase text-xs text-white">
-                              RECIPIENT address
-                            </label>
-                            <label for="company_website" class="inline-flex px-1 bg-black block font-mono uppercase text-xs text-white">
-                              0.95
-                            </label>
-                          </div>
-                          <div class="mt-1 flex rounded">
-                            <input type="text" class="focus:ring-indigo-500 px-2 py-2 bg-gray-100 focus:border-indigo-500 flex-1 block w-full  sm:text-sm border-gray-300"
-                              value="{{ recipientaddress }}"
-                            >
-                          </div>
-                        </div>
-                        <div class="">
-                          <div class="flex justify-between">
-                            <label for="company_website" class="inline-flex px-1 bg-orange-500 block font-mono uppercase text-xs text-white">
-                              RECIPIENT name
-                            </label>
-                            <label for="company_website" class="inline-flex px-1 bg-black block font-mono uppercase text-xs text-white">
-                              0.95
-                            </label>
-                          </div>
-                          <div class="mt-1 flex rounded">
-                            <input type="text" class="focus:ring-indigo-500 px-2 py-2 bg-gray-100 focus:border-indigo-500 flex-1 block w-full  sm:text-sm border-gray-300"
-                              value="{{ recipientname }}"
-                            >
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {% set nextTask = collections.task | getNextCollectionItem(page) %}
-                  {% if nextTask %}<p><a class="p-4" href="{{ nextTask.url }}"></a></p>{% endif %}
-
-                </div>
+              <div class="relative vh-100">
+                {% block content %}
+                  {{ content | safe }}
+                {% endblock %}
               </div>
               <!-- End main area -->
-            </main>
-            <aside class="hidden sm:block relative order-first xl:flex xl:flex-col flex-shrink-0 w-88 border-r border-gray-100 overflow-y-auto">
-              <div class="h-full">
-                <div class="bg-white overflow-hidden">
+            </div>
+          </div>
+        </div>
 
-                  {# <div class="flex justify-between items-center px-4 py-2 border-b border-gray-100">
-                    <nav class="flex space-x-1 p-1 bg-gray-100 inline-flex rounded" aria-label="Tabs">
-                      <a href="#" class="text-gray-500 bg-gray-100 hover:text-gray-700 px-3 py-2 text-sm rounded">
-                        Queued
-                      </a>
-                      <a href="#" class="bg-cobalt-700 text-cobalt-100 px-3 py-2 text-sm rounded">
-                        Completed
-                      </a>
-                    </nav>
-                  </div> #}
-
-                  <ul class="divide-y divide-gray-100">
-                  {%- for trainertask in collections.trainertask | reverse -%}
-                    <li {% if page.url == trainertask.url %} class="bg-cobalt-100" {% endif %}>
-                      <a
-                        href="{{ trainertask.url }}"
-                        class="{% if trainertask.data.status != 'Queued' %}opacity-50{% endif %} block hover:bg-cobalt-100"
-                      >
-                        <div class="px-4 py-3 sm:px-4">
-                          <div class="flex items-center justify-between">
-                            <p class="text-sm font-medium text-black truncate {% if page.url == task.url %}text-cobalt-500{% endif %}">
-                              {{ trainertask.data.title }}
-                            </p>
-                            <div class="ml-2 flex-shrink-0 flex">
-                              <span class="{{ trainertask.data.status }}">
-                                <div class="mt-0.5">{{ trainertask.data.status }}</div>
-                              </span>
-                            </div>
-                          </div>
-                          <div class="mt-1 sm:flex sm:justify-between">
-                            <div class="sm:flex">
-                              {% if date %}
-                              <p class="flex font-mono items-center text-xs text-gray-500">
-                                <time datetime="{{ date }}">{{ trainertask.date.toUTCString() }}</time>
-                              </p>
-                              {% endif %}
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                  {%- endfor -%}
-                  </ul>
-                </div>
-              </div>
-              <!-- End secondary column -->
-            </aside>
+        <div class="bg-white pr-4 sm:pr-6 lg:pr-8 lg:flex-shrink-0 lg:border-l lg:border-gray-200 xl:pr-0">
+          <div class="h-full pl-6 py-6 lg:w-80">
+            <!-- Start right column area -->
+            <div class="h-full relative" style="min-height: 16rem;">
+              <div class="absolute inset-0 border-4 border-gray-200 border-dashed rounded-lg"></div>
+            </div>
+            <!-- End right column area -->
           </div>
         </div>
       </div>
     </div>
+
   </body>
 </html>

@@ -16,16 +16,21 @@
     <script src="/js/alpine.js?v={% version %}"></script>
   </head>
   <body>
-    <div class="h-screen flex overflow-hidden bg-white" x-data="{open:false}">
-      {% include 'partial/app-sidebar-trainer.njk' %}
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div>
+      {% include 'partial/app-header-trainer.njk' %}
 
-      <div class="flex flex-col w-0 flex-1 overflow-hidden">
-        {% include 'partial/app-header-mobile.njk' %}
-
-        {% block content %}
-          {{ content | safe }}
-        {% endblock %}
-      </div>
+      <main class="-mt-32">
+        <div class="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
+          <!-- Replace with your content -->
+          <div class="bg-white rounded-lg shadow overflow-hidden">
+            {% block content %}
+              {{ content | safe }}
+            {% endblock %}
+          </div>
+          <!-- /End replace -->
+        </div>
+      </main>
     </div>
   </body>
 </html>

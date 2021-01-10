@@ -1,0 +1,40 @@
+{% extends "_includes/app-trainer.njk" %}
+ 
+{% block title %}Pants{% endblock %}
+ 
+{% block content %}
+  <ul class="divide-y divide-gray-100">
+    {%- for trainertask in collections.trainertask | reverse -%}
+      <li {% if page.url == trainertask.url %} class="bg-cobalt-50 hover:bg-cobalt-50"{% endif %}>
+        <a href="{{ trainertask.url }}" class="block hover:bg-gray-50">
+          <div class="px-4 py-3 sm:px-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm font-medium text-black truncate {% if page.url == trainertask.url %}text-cobalt-500{% endif %}">
+                  {{ trainertask.data.title }}
+                </p>
+                <div class="mt-1 sm:flex sm:justify-between">
+                  <div class="sm:flex">
+                    <p class="flex font-mono items-center text-xs text-gray-500">
+                      <time datetime="{{ date }}">{{ trainertask.date.toUTCString() }}</time>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="ml-2 flex-shrink-0 flex">
+                <span class="text-sm">
+                  {{ trainertask.data.tasktype }}
+                </span>
+                <div class="w-32 justify-end flex">
+                  <span class="{{ trainertask.data.audit }}">
+                    <div class="mt-0.5">{{ trainertask.data.audit }}</div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
+{% endblock %}

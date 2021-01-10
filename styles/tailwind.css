@@ -53,6 +53,21 @@ input:disabled {
   @apply border-gray-200;
 }
 
+.progress-bar {
+  @apply rounded-lg h-2 overflow-hidden;
+  -webkit-appearance: none;
+  background-color: #e5e5e5;
+  appearance: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  @apply bg-gray-200;
+}
+
+progress[value]::-webkit-progress-value {
+  @apply bg-mosque-500;
+}
+
 .tooltip .tooltip-text {
   visibility: hidden;
   text-align: center;

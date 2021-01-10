@@ -4,7 +4,7 @@
  
 {% block content %}
   {% include 'partial/app-dashboard-tabs.njk' %}
-  
+
   <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last" tabindex="0">
     <!-- Start main area-->
     <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
@@ -48,7 +48,7 @@
               </div>
               <div class="relative w-24 rounded shadow-sm">
                 <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded">
-                  <option class="py-1" disabled selected>Batch</option>
+                  <option class="py-1" disabled selected>Project</option>
                 </select>
               </div>
             </div>
@@ -56,11 +56,11 @@
           <dl class="mt-5 grid grid-cols-1 rounded-sm bg-gray-50 overflow-hidden divide-y divide-white md:grid-cols-4 md:divide-y-0 md:divide-x">
             <div>
               <div class="px-4 py-5 sm:p-6">
-                <h6 class="font-mono uppercase text-xs text-orange-500 mt-1">
-                  Accuracy
+                <h6 class="font-mono uppercase text-xs text-black mt-1">
+                  Model Accuracy
                 </h6>
                 <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
-                  <div class="flex items-baseline text-2xl font-semibold text-orange-500">
+                  <div class="flex items-baseline text-2xl font-semibold text-black">
                     99.2%
                   </div>
                 </dd>
@@ -137,11 +137,118 @@
               Check tasks
             </button>
           </div>
+        </div>
 
+        <div class="mt-12">
+          <h3 class="text-lg leading-6 font-bold text-gray-900 mb-6">
+            Quality Over Time
+          </h3>
+
+          <div id="basic-line"></div>
         </div>
 
       </div>
     </div>
     <!-- End main area -->
   </main>
+  <script>
+  var myChart = Highcharts.chart('basic-line', {
+    chart: {
+     styledMode: true,
+     height: 300
+   },
+
+   title: {
+     text: ''
+   },
+
+   yAxis: {
+     title: {
+       text: ''
+     }
+   },
+   xAxis: {
+      type: "datetime",
+      labels: {
+        formatter: function() {
+          return Highcharts.dateFormat('%e %b %Y', this.value);
+        }
+      }
+    },
+   plotOptions: {
+     series: {
+       label: {
+         connectorAllowed: true
+       },
+       pointStart: Date.UTC(2020, 12, 01),
+       pointInterval: 24 * 3600 * 1000 //one day
+     }
+   },
+
+   series: [{
+     name: 'Fixed',
+     data: [15988, 12988, 11988, 10169, 9112, 8352, 5400, 4227, 3401, 2941],
+     marker: {
+       symbol: 'circle'
+     }
+   }, {
+     name: 'Accepted',
+     data: [12916, 15064, 18742, 21851, 22490, 30282, 38121, 40434, 49413, 59331],
+     marker: {
+       symbol: 'circle'
+     }
+   }, {
+     name: 'Rejected',
+     data: [18908, 14948, 12105, 11248, 9989, 5816, 3274, 2111, 1301, 333],
+     marker: {
+       symbol: 'circle'
+     }
+   }],
+  });
+
+  var myChart = Highcharts.chart('basic-line2', {
+    chart: {
+     styledMode: true,
+     height: 260
+   },
+   legend: {
+      enabled: false
+    },
+
+   title: {
+     text: ''
+   },
+
+   yAxis: {
+     title: {
+       text: ''
+     }
+   },
+   xAxis: {
+      type: "datetime",
+      labels: {
+        formatter: function() {
+          return Highcharts.dateFormat('%e %b %Y', this.value);
+        }
+      }
+    },
+   plotOptions: {
+     series: {
+       label: {
+         connectorAllowed: true
+       },
+       pointStart: Date.UTC(2020, 12, 01),
+       pointInterval: 24 * 3600 * 1000 //one day
+     }
+   },
+
+   series: [{
+     name: 'Tasks Created',
+     data: [12916, 15064, 18742, 21851, 22490, 30282, 38121, 40434, 48132, 51959, 57142],
+     marker: {
+       symbol: 'circle'
+     }
+   }],
+  });
+</script>
 {% endblock %}
