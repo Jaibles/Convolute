@@ -21,82 +21,72 @@
     <div class="relative min-h-screen flex flex-col bg-gray-100">
       <!-- Navbar -->
       <nav class="flex-shrink-0 bg-white border-b border-gray-200">
-        <div class="max-w-9xl mx-auto px-2 sm:px-4 lg:px-8">
+        <div class="max-w-9xl mx-auto">
           <div class="relative flex items-center justify-between h-16">
             <!-- Logo section -->
             <div class="flex items-center px-2 lg:px-0 xl:w-64">
-              <div class="flex-shrink-0">
-                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-300.svg" alt="Workflow">
-              </div>
-            </div>
-
-            <div class="flex lg:hidden">
-              <!-- Mobile menu button -->
-              <button class="bg-indigo-600 inline-flex items-center justify-center p-2 rounded-md text-indigo-400 hover:text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-600 focus:ring-white" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <!-- Icon when menu is closed. -->
-                <!--
-                  Heroicon name: menu-alt-1
-
-                  Menu open: "hidden", Menu closed: "block"
-                -->
-                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-                </svg>
-                <!-- Icon when menu is open. -->
-                <!--
-                  Heroicon name: x
-
-                  Menu open: "block", Menu closed: "hidden"
-                -->
-                <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              <button onclick="goBack()" class="flex-shrink-0 h-16 w-16 border-r border-gray-100 flex items-center justify-center hover:bg-gray-50">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
               </button>
-            </div>
-            <!-- Links section -->
-            <div class="hidden lg:block lg:w-80">
-              <div class="flex items-center justify-end">
-                <div class="flex">
-                  <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white">Documentation</a>
-                  <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white">Support</a>
-                </div>
+
+              <div class="ml-2">
+                {{ title }}
               </div>
             </div>
-          </div>
-        </div>
 
-        <!--
-          Mobile menu, toggle classes based on menu state.
+            <div class="hidden lg:block lg:w-80">
+              <div class="flex items-center justify-end">
+                <div class="flex mr-4">
+                  <span class="relative z-0 inline-flex shadow-sm rounded">
+                    <button onclick="goBack()" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l border border-cobalt-300 bg-cobalt-500 text-sm font-medium text-white hover:bg-cobalt-600 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+                      Save
+                    </button>
+                    <span class="-ml-px relative block">
+                      <button id="option-menu" type="button" class="relative inline-flex items-center px-2 py-2 rounded-r border border-cobalt-300 bg-cobalt-500 text-sm font-medium text-white hover:bg-cobalt-600 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+                        <span class="sr-only">Open options</span>
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                      </button>
 
-          Menu open: "block", Menu closed: "hidden"
-        -->
-        <div class="hidden lg:hidden">
-          <div class="px-2 pt-2 pb-3">
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800">Dashboard</a>
-            <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Support</a>
-          </div>
-          <div class="pt-4 pb-3 border-t border-indigo-800">
-            <div class="px-2">
-              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Your Profile</a>
-              <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Settings</a>
-              <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-indigo-100 hover:bg-indigo-600">Sign out</a>
+                      <div class="origin-top-right absolute right-0 mt-2 -mr-1 w-56 rounded shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden">
+                        <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="option-menu">
+                          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">
+                            Accept
+                          </a>
+                          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">
+                            Fix
+                          </a>
+                          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">
+                            Reject
+                          </a>
+                        </div>
+                      </div>
+                    </span>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </nav>
 
       <!-- 3 column wrapper -->
-      <div class="bg-gray-100 vh-100 flex-grow w-full lg:flex">
+      <div class="bg-gray-100 h-100 flex-grow w-full lg:flex">
         <!-- Left sidebar & main wrapper -->
         <div class="flex-1 min-w-0 bg-white xl:flex">
           <div class="bg-gray-100 lg:min-w-0 lg:flex-1">
             <div class="h-full py-6 px-4 sm:px-6 lg:px-8">
               <!-- Start main area-->
-              <div class="relative vh-100">
-                {% block content %}
-                  {{ content | safe }}
-                {% endblock %}
+              <div class="relative flex items-center justify-center">
+                <div class="w-3/4">
+                  {% block content %}
+                    {{ content | safe }}
+                  {% endblock %}
+                </div>
+                <img class="absolute w-100 h-100 object-cover" src="/src/images/envelope-overlay-trainer.svg" alt="">
               </div>
               <!-- End main area -->
             </div>
@@ -106,8 +96,90 @@
         <div class="bg-white pr-4 sm:pr-6 lg:pr-8 lg:flex-shrink-0 lg:border-l lg:border-gray-200 xl:pr-0">
           <div class="h-full pl-6 py-6 lg:w-80">
             <!-- Start right column area -->
-            <div class="h-full relative" style="min-height: 16rem;">
-              <div class="absolute inset-0 border-4 border-gray-200 border-dashed rounded-lg"></div>
+            <div class="h-full relative">
+              <div>
+                <div class="mt-4 mx-2 flex justify-between items-center">
+                  <h3 class="font-bold">Label</h3>
+                  <h6 class="text-xs text-gray-500 font-mono font-bold uppercase hidden">accuracy</h6>
+                </div>
+                <div class="space-y-6 pt-4 px-2">
+                  <div class="">
+                    <div class="flex justify-between">
+                      <label for="company_website" class="inline-flex px-1 bg-mustard-500 block font-mono uppercase text-xs text-black">
+                        IBM Code
+                      </label>
+                      <label for="company_website" class="inline-flex px-1 bg-black block font-mono uppercase text-xs text-white hidden">
+                        1.0
+                      </label>
+                    </div>
+                    <div class="mt-1 flex rounded">
+                      <input disabled type="text" class="focus:ring-indigo-500 px-2 py-2 bg-gray-100 focus:border-indigo-500 flex-1 block w-full  sm:text-sm border-gray-300"
+                        value="{{ ibmcode }}"
+                      >
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="flex justify-between">
+                      <label for="company_website" class="inline-flex px-1 bg-cobalt-500 block font-mono uppercase text-xs text-white">
+                        Sender name
+                      </label>
+                      <label for="company_website" class="inline-flex px-1 bg-black block font-mono uppercase text-xs text-white hidden">
+                        0.95
+                      </label>
+                    </div>
+                    <div class="mt-1 flex rounded">
+                      <input disabled type="text" class="focus:ring-indigo-500 px-2 py-2 bg-gray-100 focus:border-indigo-500 flex-1 block w-full  sm:text-sm border-gray-300"
+                        value="{{ sendername }}"
+                      >
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="flex justify-between">
+                      <label for="company_website" class="inline-flex px-1 bg-cobalt-500 block font-mono uppercase text-xs text-white">
+                        Sender address
+                      </label>
+                      <label for="company_website" class="inline-flex px-1 bg-black block font-mono uppercase text-xs text-white hidden">
+                        0.80
+                      </label>
+                    </div>
+                    <div class="mt-1 flex rounded">
+                      <input disabled type="text" class="focus:ring-indigo-500 px-2 py-2 bg-gray-100 focus:border-indigo-500 flex-1 block w-full  sm:text-sm border-gray-300"
+                        value="{{ senderaddress }}"
+                      >
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="flex justify-between">
+                      <label for="company_website" class="inline-flex px-1 bg-orange-500 block font-mono uppercase text-xs text-white">
+                        RECIPIENT address
+                      </label>
+                      <label for="company_website" class="inline-flex px-1 bg-black block font-mono uppercase text-xs text-white hidden">
+                        0.95
+                      </label>
+                    </div>
+                    <div class="mt-1 flex rounded">
+                      <input disabled type="text" class="focus:ring-indigo-500 px-2 py-2 bg-gray-100 focus:border-indigo-500 flex-1 block w-full  sm:text-sm border-gray-300"
+                        value="{{ recipientaddress }}"
+                      >
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="flex justify-between">
+                      <label for="company_website" class="inline-flex px-1 bg-orange-500 block font-mono uppercase text-xs text-white">
+                        RECIPIENT name
+                      </label>
+                      <label for="company_website" class="inline-flex px-1 bg-black block font-mono uppercase text-xs text-white hidden">
+                        0.95
+                      </label>
+                    </div>
+                    <div class="mt-1 flex rounded">
+                      <input disabled type="text" class="focus:ring-indigo-500 px-2 py-2 bg-gray-100 focus:border-indigo-500 flex-1 block w-full  sm:text-sm border-gray-300"
+                        value="{{ recipientname }}"
+                      >
+                    </div>
+                </div>
+              </div>
+
             </div>
             <!-- End right column area -->
           </div>
@@ -116,4 +188,9 @@
     </div>
 
   </body>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
 </html>
