@@ -1,13 +1,43 @@
 {% extends "_includes/app-trainer.njk" %}
  
-{% block title %}Pants{% endblock %}
+{% block title %}{{ projecttitle }}{% endblock %}
  
 {% block content %}
+  <!-- This example requires Tailwind CSS v2.0+ -->
+  <div class="flex justify-between p-6">
+    <div>
+      <div>
+        <div class="w-64 mt-1 relative rounded-md shadow-sm">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <input type="text" name="search" id="search" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md" placeholder="Search tasks...">
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden sm:block">
+      <span class="relative z-0 inline-flex shadow-sm rounded-md">
+        <button type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-gray-500 text-sm font-medium text-white hover:bg-gray-600 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+          All
+        </button>
+        <button type="button" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+          Completed
+        </button>
+        <button type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+          Queued
+        </button>
+      </span>
+    </div>
+  </div>
+
   <ul class="divide-y divide-gray-100">
     {%- for trainertask in collections.trainertask | reverse -%}
       <li {% if page.url == trainertask.url %} class="bg-cobalt-50 hover:bg-cobalt-50"{% endif %}>
         <a href="{{ trainertask.url }}" class="block hover:bg-gray-50">
-          <div class="px-4 py-3 sm:px-4">
+          <div class="px-6 py-3 sm:px-6 ">
             <div class="flex items-center justify-between">
               <div>
                 <p class="text-sm font-medium text-black truncate {% if page.url == trainertask.url %}text-cobalt-500{% endif %}">
@@ -22,9 +52,6 @@
                 </div>
               </div>
               <div class="ml-2 flex-shrink-0 flex">
-                <span class="text-sm">
-                  {{ trainertask.data.tasktype }}
-                </span>
                 <div class="w-32 justify-end flex">
                   <span class="{{ trainertask.data.status }}">
                     <div class="mt-0.5">{{ trainertask.data.status }}</div>

@@ -2,12 +2,12 @@
 title: Projects
 ---
 
-
 {% extends "_includes/app-trainer.njk" %}
  
 {% block title %}Projects{% endblock %}
  
 {% block content %}
+
   <ul class="divide-y divide-gray-100 border border-gray-100 rounded">
     {%- for project in collections.project | reverse -%}
       <li {% if page.url == project.url %} class="bg-cobalt-50 hover:bg-cobalt-50"{% endif %}>
@@ -24,7 +24,7 @@ title: Projects
                 </div>
                 <div>
                   <p class="text-sm font-medium text-black truncate {% if page.url == project.url %}text-cobalt-500{% endif %}">
-                    {{ project.data.title }}
+                    {{ project.data.projecttitle }}
                   </p>
                   <div class="mt-1 sm:flex sm:justify-between">
                     <div class="sm:flex">

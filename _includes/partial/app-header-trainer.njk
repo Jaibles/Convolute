@@ -1,23 +1,30 @@
 <div class="bg-black pb-32">
   <nav class="bg-black">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <div class="border-b border-gray-700">
+      <div class="border-b border-gray-900">
         <div class="flex items-center justify-between h-16 px-4 sm:px-0">
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <a href="/app/overview/">
-                <img class="w-auto h-8" src="/src/images/convolute-logo-white.svg" alt="Convolute logo">
+                <img class="w-auto h-8" src="/src/images/convolute-icon-white.svg" alt="Convolute logo">
               </a>
             </div>
-            <div class="hidden md:block">
-              <div class="ml-10 flex items-baseline space-x-4">
-                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                  Reports
-                </a>
-
+            <div class="md:block">
+              <div class="ml-4 flex items-center space-x-3">
                 <a href="/trainer/projects" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">
                   Projects
                 </a>
+
+                {% if projecttitle %}
+                <a class="hidden sm:flex flex text-white py-2 rounded-md text-sm font-medium">
+                  <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="ml-2">
+                    {{ projecttitle }}
+                  </span>
+                </a>
+                {% endif %}
               </div>
             </div>
           </div>
@@ -26,13 +33,11 @@
             <div class="ml-4 flex items-center md:ml-6">
               <button class="bg-gray-800 p-1 text-gray-400 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                 <span class="sr-only">View notifications</span>
-                <!-- Heroicon name: bell -->
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                 </svg>
               </button>
 
-              <!-- Profile dropdown -->
               <div x-data="{dropdownopen:false}" class="ml-3 relative">
                 <div>
                   <button @click="dropdownopen = true" class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-haspopup="true">
@@ -53,18 +58,12 @@
             </div>
           </div>
           <div class="-mr-2 flex md:hidden">
-            <!-- Mobile menu button -->
             <button class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
               <span class="sr-only">Open main menu</span>
 
               <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
-              <!--
-                Heroicon name: x
-
-                Menu open: "block", Menu closed: "hidden"
-              -->
               <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
@@ -121,11 +120,28 @@
   </nav>
   <header class="py-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold text-white">
-        {{ title }}
-      </h1>
-      <div class="mt-1 text-sm text-white font-mono">
-        {{ projectid }}
+      <div class="pb-5 sm:flex sm:items-center sm:justify-between">
+        <div>
+          <h1 class="text-3xl font-bold text-white">
+            {{ title }}
+            {# or #}
+            {{ projecttitle }}
+          </h1>
+
+          {% if projectid %}
+            <div class="mt-1 text-sm text-white font-mono">
+              Project ID: {{ projectid }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="mt-3 flex sm:mt-0 sm:ml-4">
+          <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-white bg-opacity-20 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Info
+          </button>
+          <button type="button" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-cobalt-600 hover:bg-cobalt-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Complete Project
+          </button>
+        </div>
       </div>
     </div>
   </header>
