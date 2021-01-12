@@ -86,20 +86,24 @@ progress[value]::-webkit-progress-value {
 }
 
 .badge {
-  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs bg-gray-200 text-gray-800;
+  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded bg-gray-200 text-gray-800;
   font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
   font-size: 10px;
 }
 
+.badge-primary {
+  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded bg-cobalt-200 text-cobalt-800;
+}
+
 .Accepted,
 .Completed {
-  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs bg-mosque-200 text-mosque-800;
+  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded bg-mosque-200 text-mosque-800;
   font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
   font-size: 10px;
 }
 
 .In {
-  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded text-xs bg-mustard-200 text-mustard-800;
+  @apply ml-4 uppercase inline-flex items-center px-1 py-0 rounded bg-mustard-200 text-mustard-800;
   font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
   font-size: 10px;
 }

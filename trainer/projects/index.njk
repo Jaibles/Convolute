@@ -8,6 +8,10 @@ title: Projects
  
 {% block content %}
 
+  <span class="badge badge-primary mt-4 mb-4">
+    In Progress
+  </span>
+
   <ul class="divide-y divide-gray-100 border border-gray-100 rounded">
     {%- for project in collections.project | reverse -%}
       <li {% if page.url == project.url %} class="bg-cobalt-50 hover:bg-cobalt-50"{% endif %}>
@@ -16,7 +20,7 @@ title: Projects
             <div class="flex items-center justify-between">
               <div class="flex">
                 <div class="flex-shrink-0">
-                  <div class="flex items-center justify-center h-10 w-10 rounded-md bg-black text-white mr-3">
+                  <div class="flex items-center justify-center h-10 w-10 rounded-md bg-mosque-600 text-white mr-3">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
@@ -29,46 +33,133 @@ title: Projects
                   <div class="mt-1 sm:flex sm:justify-between">
                     <div class="sm:flex">
                       <p class="flex font-mono items-center text-xs text-gray-500">
-                        <time datetime="{{ date }}">Created: {{ project.data.datecreated.toUTCString() }}</time>
+                        <time datetime="{{ date }}">Started: {{ project.data.datecreated.toUTCString() }}</time>
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="flex">
-                <div class="ml-2 flex-shrink-0 flex tooltip">
-                  <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm bg-gray-100 text-gray-800">
-                    <svg class="-ml-1 mr-1.5 h-2 w-2 text-gray-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                    </svg>
-                    <span class="mt-0.5">{{ project.data.tasksCount }}</span>
-                  </span>
-                  <span class='tooltip-text bg-gray-200 p-3 -mt-6 text-xs -ml-6 rounded'>{{ project.data.tasksCount }} Tasks</span>
-                </div>
+              <div class="flex items-center">
+                <progress class="progress-bar mr-2" max="100" value="{{ project.data.tasksCompleted }}"> {{ project.data.tasksCount }}%</progress>
 
                 <div class="ml-2 flex-shrink-0 flex tooltip">
                   <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm bg-mosque-100 text-mosque-800">
-                    <svg class="-ml-1 mr-1.5 h-2 w-2 text-mosque-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                    </svg>
-                    <span class="mt-0.5">{{ project.data.tasksCompleted }}</span>
+                    <span class="mt-0.5">{{ project.data.tasksCompleted }} / {{ project.data.tasksCount }}</span>
                   </span>
                   <span class='tooltip-text bg-mosque-200 p-3 -mt-6 text-xs -ml-6 rounded'>{{ project.data.tasksCompleted }} Completed</span>
                 </div>
 
-                <div class="ml-2 flex-shrink-0 flex tooltip">
-                  <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm bg-orange-100 text-orange-800">
-                    <svg class="-ml-1 mr-1.5 h-2 w-2 text-orange-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
+                <button type="button" class="ml-6 mr-2 inline-flex items-center bg-transparent text-sm text-cobalt-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
+                  Resume
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+  <span class="badge Queued mt-6 mb-4">
+    Queued
+  </span>
+
+  <ul class="divide-y divide-gray-100 border border-gray-100 rounded">
+    {%- for project in collections.project -%}
+      <li {% if page.url == project.url %} class="bg-cobalt-50 hover:bg-cobalt-50"{% endif %}>
+        <a href="{{ project.url }}" class="block hover:bg-gray-50">
+          <div class="px-4 py-3 sm:px-4 items-center">
+            <div class="flex items-center justify-between">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <div class="flex items-center justify-center h-10 w-10 rounded-md bg-mosque-600 text-white mr-3">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <span class="mt-0.5">18</span>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-sm font-medium text-black truncate {% if page.url == project.url %}text-cobalt-500{% endif %}">
+                    {{ project.data.projecttitle }}
+                  </p>
+                  <div class="mt-1 sm:flex sm:justify-between">
+                    <div class="sm:flex">
+                      <p class="flex font-mono items-center text-xs text-gray-500">
+                        <time datetime="{{ date }}">Started: {{ project.data.datecreated.toUTCString() }}</time>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center">
+                <progress class="progress-bar mr-2" max="100" value="0"> {{ project.data.tasksCount }}%</progress>
+
+                <div class="ml-2 flex-shrink-0 flex tooltip">
+                  <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm bg-mosque-100 text-mosque-800">
+                    <span class="mt-0.5">0 / {{ project.data.tasksCount }}</span>
                   </span>
-                  <span class='tooltip-text bg-orange-200 p-3 -mt-6 text-xs -ml-6 rounded'>18 Queued</span>
+                  <span class='tooltip-text bg-mosque-200 p-3 -mt-6 text-xs -ml-6 rounded'>{{ project.data.tasksCompleted }} Completed</span>
                 </div>
 
-                <button type="button" class="mx-6 inline-flex items-center bg-transparent text-sm text-cobalt-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
+                <button type="button" class="ml-6 mr-2 inline-flex items-center bg-transparent text-sm text-cobalt-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
                   Start
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+  <span class="badge Completed mt-6 mb-4">
+    Complete
+  </span>
+
+  <ul class="opacity-50 divide-y divide-gray-100 border border-gray-100 rounded">
+    {%- for project in collections.project | reverse -%}
+      <li {% if page.url == project.url %} class="bg-cobalt-50 hover:bg-cobalt-50"{% endif %}>
+        <a href="{{ project.url }}" class="block hover:bg-gray-50">
+          <div class="px-4 py-3 sm:px-4 items-center">
+            <div class="flex items-center justify-between">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <div class="flex items-center justify-center h-10 w-10 rounded-md bg-mosque-600 text-white mr-3">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-sm font-medium text-black truncate {% if page.url == project.url %}text-cobalt-500{% endif %}">
+                    {{ project.data.projecttitle }}
+                  </p>
+                  <div class="mt-1 sm:flex sm:justify-between">
+                    <div class="sm:flex">
+                      <p class="flex font-mono items-center text-xs text-gray-500">
+                        <time datetime="{{ date }}">Started: {{ project.data.datecreated.toUTCString() }}</time>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center">
+                <progress class="progress-bar mr-2" max="100" value="100"> {{ project.data.tasksCount }}%</progress>
+
+                <div class="ml-2 flex-shrink-0 flex tooltip">
+                  <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm bg-mosque-100 text-mosque-800">
+                    <span class="mt-0.5">{{ project.data.tasksCount }} / {{ project.data.tasksCount }}</span>
+                  </span>
+                  <span class='tooltip-text bg-mosque-200 p-3 -mt-6 text-xs -ml-6 rounded'>{{ project.data.tasksCompleted }} Completed</span>
+                </div>
+
+                <button type="button" class="ml-6 mr-2 inline-flex items-center bg-transparent text-sm text-cobalt-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cobalt-500">
+                  Edit
                 </button>
 
               </div>
