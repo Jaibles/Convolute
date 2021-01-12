@@ -8,11 +8,16 @@ title: Projects
  
 {% block content %}
 
-  <span class="badge badge-primary mt-4 mb-4">
-    In Progress
-  </span>
+  <div class="flex justify-betwee mt-4 hover:bg-gray-50 p-4 cursor-pointer">
+    <span class="badge badge-primary">
+      In Progress
+    </span>
+    <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
 
-  <ul class="divide-y divide-gray-100 border border-gray-100 rounded">
+  <ul class="divide-y divide-gray-100 border-b border-t border-gray-100">
     {%- for project in collections.project | reverse -%}
       <li {% if page.url == project.url %} class="bg-cobalt-50 hover:bg-cobalt-50"{% endif %}>
         <a href="{{ project.url }}" class="block hover:bg-gray-50">
@@ -62,11 +67,16 @@ title: Projects
     {%- endfor -%}
   </ul>
 
-  <span class="badge Queued mt-6 mb-4">
-    Queued
-  </span>
+  <div class="flex justify-betwee mt-4 hover:bg-gray-50 p-4 cursor-pointer">
+    <span class="badge Queued ">
+      Queued
+    </span>
+    <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
 
-  <ul class="divide-y divide-gray-100 border border-gray-100 rounded">
+  <ul class="divide-y divide-gray-100 border-b border-t border-gray-100">
     {%- for project in collections.project -%}
       <li {% if page.url == project.url %} class="bg-cobalt-50 hover:bg-cobalt-50"{% endif %}>
         <a href="{{ project.url }}" class="block hover:bg-gray-50">
@@ -116,11 +126,16 @@ title: Projects
     {%- endfor -%}
   </ul>
 
-  <span class="badge Completed mt-6 mb-4">
-    Complete
-  </span>
+  <div class="flex justify-betwee mt-4 hover:bg-gray-50 p-4 cursor-pointer">
+    <span class="badge Completed">
+      Complete
+    </span>
+    <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
 
-  <ul class="opacity-50 divide-y divide-gray-100 border border-gray-100 rounded">
+  <ul class="opacity-50 divide-y divide-gray-100 border-b border-t border-gray-100">
     {%- for project in collections.project | reverse -%}
       <li {% if page.url == project.url %} class="bg-cobalt-50 hover:bg-cobalt-50"{% endif %}>
         <a href="{{ project.url }}" class="block hover:bg-gray-50">

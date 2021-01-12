@@ -51,6 +51,8 @@
 
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
 
+                  <a href="/app/overview/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dataset Owner</a>
+
                   <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign out</a>
                 </div>
               </div>
@@ -129,7 +131,7 @@
           </h1>
 
           {% if projectid %}
-            <div class="mt-1 text-sm text-white font-mono">
+            <div class="mt-1 text-sm text-gray-400 font-mono">
               Project ID: {{ projectid }}
             </div>
           {% endif %}
@@ -140,7 +142,7 @@
           <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-white bg-opacity-20 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             Info
           </button>
-          <a href="/projects"  type="button" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-cobalt-600 hover:bg-cobalt-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <a href="/trainer/projects"  type="button" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-cobalt-600 hover:bg-cobalt-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             Complete Project
           </a>
         </div>
