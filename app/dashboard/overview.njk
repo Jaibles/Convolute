@@ -1,0 +1,187 @@
+{% extends "_includes/app.njk" %}
+ 
+{% block title %}Convolute{% endblock %}
+ 
+{% block content %}
+  {% include 'partial/app-dashboard-tabs.njk' %}
+
+  <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last" tabindex="0">
+    <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
+      <div class="h-full">
+        <div class="mt-4">
+          <h3 class="text-lg leading-6 font-bold text-gray-900 mb-6">
+            Tasks Created Over Time
+          </h3>
+
+          <div id="basic-line2"></div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-lg leading-6 font-bold text-gray-900 mb-6">
+            Tasks Completed Over Time
+          </h3>
+
+          <div id="basic-line3"></div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-lg leading-6 font-bold text-gray-900 mb-6">
+            Quality Over Time
+          </h3>
+
+          <div id="basic-line"></div>
+        </div>
+
+      </div>
+    </div>
+    <!-- End main area -->
+  </main>
+
+  <script>
+    var myChart = Highcharts.chart('basic-line', {
+      chart: {
+       styledMode: true,
+       height: 300
+     },
+
+     title: {
+       text: ''
+     },
+
+     yAxis: {
+       title: {
+         text: ''
+       }
+     },
+     xAxis: {
+        type: "datetime",
+        labels: {
+          formatter: function() {
+            return Highcharts.dateFormat('%e %b %Y', this.value);
+          }
+        }
+      },
+     plotOptions: {
+       series: {
+         label: {
+           connectorAllowed: true
+         },
+         pointStart: Date.UTC(2020, 12, 01),
+         pointInterval: 24 * 3600 * 1000 //one day
+       }
+     },
+
+     series: [{
+       name: 'Fixed',
+       data: [15988, 12988, 11988, 10169, 9112, 8352, 5400, 4227, 3401, 2941],
+       marker: {
+         symbol: 'circle'
+       }
+     }, {
+       name: 'Accepted',
+       data: [12916, 15064, 18742, 21851, 22490, 30282, 38121, 40434, 49413, 59331],
+       marker: {
+         symbol: 'circle'
+       }
+     }, {
+       name: 'Rejected',
+       data: [18908, 14948, 12105, 11248, 9989, 5816, 3274, 2111, 1301, 333],
+       marker: {
+         symbol: 'circle'
+       }
+     }],
+    });
+
+    var myChart = Highcharts.chart('basic-line2', {
+      chart: {
+       styledMode: true,
+       height: 260
+     },
+     legend: {
+        enabled: false
+      },
+
+     title: {
+       text: ''
+     },
+
+     yAxis: {
+       title: {
+         text: ''
+       }
+     },
+     xAxis: {
+        type: "datetime",
+        labels: {
+          formatter: function() {
+            return Highcharts.dateFormat('%e %b %Y', this.value);
+          }
+        }
+      },
+     plotOptions: {
+       series: {
+         label: {
+           connectorAllowed: true
+         },
+         pointStart: Date.UTC(2020, 12, 01),
+         pointInterval: 24 * 3600 * 1000 //one day
+       }
+     },
+
+     series: [{
+       name: 'Tasks Created',
+       data: [12916, 15064, 18742, 21851, 22490, 30282, 38121, 40434, 48132, 51959, 57142],
+       marker: {
+         symbol: 'circle'
+       }
+     }],
+    });
+
+
+    var myChart = Highcharts.chart('basic-line3', {
+      chart: {
+       styledMode: true,
+       height: 260
+     },
+     legend: {
+        enabled: false
+      },
+
+     title: {
+       text: ''
+     },
+
+     yAxis: {
+       title: {
+         text: ''
+       }
+     },
+     xAxis: {
+        type: "datetime",
+        labels: {
+          formatter: function() {
+            return Highcharts.dateFormat('%e %b %Y', this.value);
+          }
+        }
+      },
+     plotOptions: {
+       series: {
+         label: {
+           connectorAllowed: true
+         },
+         pointStart: Date.UTC(2020, 12, 01),
+         pointInterval: 24 * 3600 * 1000 //one day
+       }
+     },
+
+     series: [{
+       name: 'Tasks Completed',
+       data: [2916, 5064, 8742, 11851, 12490, 20282, 31121, 34434, 41132, 41959, 47142],
+       marker: {
+         symbol: 'circle'
+       }
+     }],
+    });
+
+  </script>
+{% endblock %}

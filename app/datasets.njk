@@ -1,0 +1,49 @@
+{% extends "_includes/app.njk" %}
+ 
+{% block title %}Convolute{% endblock %}
+ 
+{% block content %}
+  <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last" tabindex="0">
+    <!-- Start main area-->
+    <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div class="h-full">
+        <div class="mt-2 flex justify-between items-center">
+          <h2 class="text-xl leading-6 font-bold text-gray-900">
+            Datasets
+          </h2>
+          <button class="btn btn-primary">
+            Add Dataset
+          </button>
+        </div>
+
+        <div class="mt-8">
+          <div class="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+            <div class="flex flex-col rounded shadow-sm overflow-hidden">
+              <div class="flex-shrink-0">
+                <img class="h-36 w-full object-cover" src="https://images.unsplash.com/photo-1605699717788-aaf3b031590e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+              </div>
+              <div class="flex-1 bg-white p-4 flex flex-col justify-between">
+                <div class="flex-1">
+                  <a href="#" class="block mt-">
+                    <p class="text-md font-semibold text-gray-900">
+                      Japanese Envelopes
+                    </p>
+                  </a>
+                </div>
+                <div class="mt-1 flex items-center">
+                  <div class="flex font-mono text-xs text-gray-500">
+                    <span>
+                      48 items
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- End main area -->
+  </main>
+{% endblock %}

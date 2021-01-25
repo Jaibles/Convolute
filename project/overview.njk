@@ -1,0 +1,281 @@
+{% extends "_includes/app.njk" %}
+ 
+{% block title %}Convolute{% endblock %}
+ 
+{% block content %}
+
+  <main class="flex-1 relative z-0 bg-gray-50 overflow-y-auto focus:outline-none xl:order-last" tabindex="0">
+
+    <div class="">
+      <div class="border-b bg-white border-gray-200">
+        <div class="inset-0 px-4 sm:px-6 lg:px-8">
+          <nav class="-mb-px flex space-x-2" aria-label="Tabs">
+            <a href="/project/overview" class="{{ 'border-cobalt-500 border-cobalt-500 text-cobalt-600' if '/project/overview' in page.url }} border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 text-sm">
+              Overview
+            </a>
+            <a href="/project/tasks" class="{{ 'border-cobalt-500 border-cobalt-500 text-cobalt-600' if '/tasks/task' in page.url }} border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 text-sm">
+              Tasks
+            </a>
+            <a href="/project/batches" class="{{ 'border-cobalt-500 border-cobalt-500 text-cobalt-600' if '/tasks/task' in page.url }} border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 text-sm">
+              Batches
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start main area-->
+    <div class="inset-0 py-6 px-4 sm:px-6 lg:px-8">
+      <div class="h-full">
+        <div>
+          <div class="flex justify-between items-end mt-4">
+            <h3 class="text-lg leading-6 font-bold text-gray-900">
+              Quality Metrics
+            </h3>
+          </div>
+
+          <dl class="mt-5 grid grid-cols-1 rounded-md bg-white shadow-sm overflow-hidden divide-y divide-gray-100 md:grid-cols-5 md:divide-y-0 md:divide-x">
+            <div>
+              <div class="px-4 py-5 sm:p-6">
+                <h6 class="font-mono uppercase text-xs text-black mt-1">
+                  Accuracy
+                </h6>
+                <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                  <div class="flex items-baseline text-2xl font-semibold text-black">
+                    82%
+                  </div>
+                </dd>
+              </div>
+            </div>
+
+            <div>
+              <div class="px-4 py-5 sm:p-6">
+                <h6 class="font-mono uppercase text-xs text-cobalt-500 mt-1">
+                  Ready to Audit
+                </h6>
+                <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                  <div class="flex items-baseline text-2xl font-semibold text-cobalt-500">
+                    33
+                  </div>
+                </dd>
+              </div>
+            </div>
+
+            <div>
+              <div class="px-4 py-5 sm:p-6">
+                <h6 class="font-mono uppercase text-xs text-mosque-500 mt-1">
+                  Accepted
+                </h6>
+                <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                  <div class="flex items-baseline text-2xl font-semibold text-mosque-500">
+                    29
+                  </div>
+                </dd>
+              </div>
+            </div>
+
+            <div>
+              <div class="px-4 py-5 sm:p-6">
+                <h6 class="font-mono uppercase text-xs text-orange-500 mt-1">
+                  Fixed
+                </h6>
+                <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                  <div class="flex items-baseline text-2xl font-semibold text-orange-500">
+                    8
+                  </div>
+                </dd>
+              </div>
+            </div>
+
+            <div>
+              <div class="px-4 py-5 sm:p-6">
+                <h6 class="font-mono uppercase text-xs text-red-500 mt-1">
+                  Rejected
+                </h6>
+                <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                  <div class="flex items-baseline text-2xl font-semibold text-red-500">
+                    4
+                  </div>
+                </dd>
+              </div>
+            </div>
+          </dl>
+        </div>
+
+        <div class="mt-8">
+          <div class="mt-4 bg-white rounded-md p-6 shadow-sm">
+            <h3 class="text-lg leading-6 font-bold text-gray-900 mb-6">
+              Tasks Created
+            </h3>
+            <div id="basic-line2"></div>
+          </div>
+
+          <div class="mt-8 bg-white rounded-md p-6 shadow-sm">
+            <h3 class="text-lg leading-6 font-bold text-gray-900 mb-6">
+              Tasks Completed
+            </h3>
+            <div id="basic-line3"></div>
+          </div>
+
+          <div class="mt-8 bg-white rounded-md p-6 shadow-sm">
+            <h3 class="text-lg leading-6 font-bold text-gray-900 mb-6">
+              Quality Over Time
+            </h3>
+            <div id="basic-line"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- End main area -->
+  </main>
+
+  <script>
+    var myChart = Highcharts.chart('basic-line', {
+      chart: {
+       styledMode: true,
+       height: 300
+     },
+
+     title: {
+       text: ''
+     },
+
+     yAxis: {
+       title: {
+         text: ''
+       }
+     },
+     xAxis: {
+        type: "datetime",
+        labels: {
+          formatter: function() {
+            return Highcharts.dateFormat('%e %b %Y', this.value);
+          }
+        }
+      },
+     plotOptions: {
+       series: {
+         label: {
+           connectorAllowed: true
+         },
+         pointStart: Date.UTC(2020, 12, 01),
+         pointInterval: 24 * 3600 * 1000 //one day
+       }
+     },
+
+     series: [{
+       name: 'Fixed',
+       data: [15988, 12988, 11988, 10169, 9112, 8352, 5400, 4227, 3401, 2941],
+       marker: {
+         symbol: 'circle'
+       }
+     }, {
+       name: 'Accepted',
+       data: [12916, 15064, 18742, 21851, 22490, 30282, 38121, 40434, 49413, 59331],
+       marker: {
+         symbol: 'circle'
+       }
+     }, {
+       name: 'Rejected',
+       data: [18908, 14948, 12105, 11248, 9989, 5816, 3274, 2111, 1301, 333],
+       marker: {
+         symbol: 'circle'
+       }
+     }],
+    });
+
+    var myChart = Highcharts.chart('basic-line2', {
+      chart: {
+       styledMode: true,
+       height: 260
+     },
+     legend: {
+        enabled: false
+      },
+
+     title: {
+       text: ''
+     },
+
+     yAxis: {
+       title: {
+         text: ''
+       }
+     },
+     xAxis: {
+        type: "datetime",
+        labels: {
+          formatter: function() {
+            return Highcharts.dateFormat('%e %b %Y', this.value);
+          }
+        }
+      },
+     plotOptions: {
+       series: {
+         label: {
+           connectorAllowed: true
+         },
+         pointStart: Date.UTC(2020, 12, 01),
+         pointInterval: 24 * 3600 * 1000 //one day
+       }
+     },
+
+     series: [{
+       name: 'Tasks Created',
+       data: [12916, 15064, 18742, 21851, 22490, 30282, 38121, 40434, 48132, 51959, 57142],
+       marker: {
+         symbol: 'circle'
+       }
+     }],
+    });
+
+
+    var myChart = Highcharts.chart('basic-line3', {
+      chart: {
+       styledMode: true,
+       height: 260
+     },
+     legend: {
+        enabled: false
+      },
+
+     title: {
+       text: ''
+     },
+
+     yAxis: {
+       title: {
+         text: ''
+       }
+     },
+     xAxis: {
+        type: "datetime",
+        labels: {
+          formatter: function() {
+            return Highcharts.dateFormat('%e %b %Y', this.value);
+          }
+        }
+      },
+     plotOptions: {
+       series: {
+         label: {
+           connectorAllowed: true
+         },
+         pointStart: Date.UTC(2020, 12, 01),
+         pointInterval: 24 * 3600 * 1000 //one day
+       }
+     },
+
+     series: [{
+       name: 'Tasks Completed',
+       data: [2916, 5064, 8742, 11851, 12490, 20282, 31121, 34434, 41132, 41959, 47142],
+       marker: {
+         symbol: 'circle'
+       }
+     }],
+    });
+
+  </script>
+{% endblock %}

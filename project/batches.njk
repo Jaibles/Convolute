@@ -1,0 +1,117 @@
+{% extends "_includes/app.njk" %}
+ 
+{% block title %}Convolute{% endblock %}
+ 
+{% block content %}
+
+  <main class="flex-1 relative z-0 bg-gray-50 overflow-y-auto focus:outline-none xl:order-last" tabindex="0">
+
+    <div class="">
+      <div class="border-b bg-white border-gray-100">
+        <div class="inset-0 px-4 sm:px-6 lg:px-8">
+          <nav class="-mb-px flex space-x-2" aria-label="Tabs">
+            <a href="/project/overview" class="{{ 'border-cobalt-500 border-cobalt-500 text-cobalt-600' if '/project/overview' in page.url }} border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 text-sm">
+              Overview
+            </a>
+            <a href="/project/tasks" class="{{ 'border-cobalt-500 border-cobalt-500 text-cobalt-600' if '/project/tasks' in page.url }} border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 text-sm">
+              Tasks
+            </a>
+            <a href="/project/batches" class="{{ 'border-cobalt-500 border-cobalt-500 text-cobalt-600' if '/project/batches' in page.url }} border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 text-sm">
+              Batches
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start main area-->
+    <div class="inset-0 py-6 px-4 sm:px-6 lg:px-8">
+      <div class="h-full">
+
+        <div class="mt-4">
+          <h3 class="text-lg leading-6 font-bold text-gray-900 mb-4">
+            Batches
+          </h3>
+
+          {%- for task in collections.task | reverse -%}
+          <ul class="divide-y divide-gray-100 bg-white mb-2 border border-gray-100 rounded">
+            <li {% if page.url == task.url %} class="bg-cobalt-50 hover:bg-cobalt-50"{% endif %}>
+              <a href="{{ task.url }}" class="block border-2 border-transparent rounded hover:border-cobalt-500">
+                <div class="px-4 py-3 sm:px-4 items-center">
+                  <div class="flex items-center justify-between">
+                    <div class="flex">
+                      <div class="flex items-center justify-center h-9 w-9 rounded-md bg-gray-900 text-white mr-2">
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
+                        </svg>
+                      </div>
+
+                      <div>
+                        <p class="text- font-bold text-black truncate {% if page.url == task.url %}text-cobalt-500{% endif %}">
+                          {{ task.data.inbatch }}
+                        </p>
+                        <div class="mt-0 sm:flex sm:justify-between">
+                          <div class="sm:flex">
+                            <p class="flex font-mono items-center text-xs text-gray-500">
+                              28 Tasks
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center">
+                      <div class="ml-2 flex-shrink-0 flex tooltip">
+                        <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs bg-gray-100 text-gray-800">
+                          <svg class="-ml-1 mr-1.5 h-2 w-2 text-gray-500" fill="currentColor" viewBox="0 0 8 8">
+                          <circle cx="4" cy="4" r="3" />
+                          </svg>
+                          <span class="mt-0.5">12</span>
+                        </span>
+                        <span class='tooltip-text bg-gray-200 p-3 -mt-6 text-xs -ml-6 rounded'>12 ready to audit</span>
+                      </div>
+
+                      <div class="ml-2 flex-shrink-0 flex tooltip">
+                        <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs bg-mosque-100 text-mosque-800">
+                          <svg class="-ml-1 mr-1.5 h-2 w-2 text-mosque-500" fill="currentColor" viewBox="0 0 8 8">
+                          <circle cx="4" cy="4" r="3" />
+                          </svg>
+                          <span class="mt-0.5">51</span>
+                        </span>
+                        <span class='tooltip-text bg-mosque-200 p-3 -mt-6 text-xs -ml-6 rounded'>51 accepted</span>
+                      </div>
+
+                      <div class="ml-2 flex-shrink-0 flex tooltip">
+                        <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs bg-orange-100 text-orange-800">
+                          <svg class="-ml-1 mr-1.5 h-2 w-2 text-orange-500" fill="currentColor" viewBox="0 0 8 8">
+                          <circle cx="4" cy="4" r="3" />
+                          </svg>
+                          <span class="mt-0.5">18</span>
+                        </span>
+                        <span class='tooltip-text bg-orange-200 p-3 -mt-6 text-xs -ml-6 rounded'>18 fixed</span>
+                      </div>
+
+                      <div class="ml-2 flex-shrink-0 flex tooltip">
+                        <span class="inline-flex items-center px-2 py-0.5 rounded-sm text-xs bg-red-100 text-red-800">
+                          <svg class="-ml-1 mr-1.5 h-2 w-2 text-red-500" fill="currentColor" viewBox="0 0 8 8">
+                          <circle cx="4" cy="4" r="3" />
+                          </svg>
+                          <span class="mt-0.5">2</span>
+                        </span>
+                        <span class='tooltip-text bg-red-200 p-3 -mt-6 text-xs -ml-6 rounded'>2 rejected</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          {%- endfor -%}
+
+        </div>
+
+      </div>
+    </div>
+    <!-- End main area -->
+  </main>
+{% endblock %}
