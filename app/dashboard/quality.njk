@@ -5,7 +5,7 @@
 {% block content %}
   {% include 'partial/app-dashboard-tabs.njk' %}
 
-  <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last" tabindex="0">
+  <main class="flex-1 relative z-0 overflow-y-auto bg-gray-50 focus:outline-none xl:order-last" tabindex="0">
     <!-- Start main area-->
     <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
       <div class="h-full">
@@ -29,7 +29,7 @@
               </div>
               <div class="relative w-24 rounded shadow-sm">
                 <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded">
-                  <option class="py-1" disabled selected>status</option>
+                  <option class="py-1" disabled selected>Status</option>
                   <option class="py-1">Accepted</option>
                   <option class="py-1">In progress</option>
                   <option class="py-1">Queued</option>
@@ -46,22 +46,22 @@
                   <option class="py-1">Rejected</option>
                 </select>
               </div>
-              <div class="relative w-24 rounded shadow-sm">
+              <div class="relative w-26 rounded shadow-sm">
                 <select type="text" name="account_number" id="account_number" class="focus:ring-cobalt-500 focus:border-cobalt-500 block w-full pr-10 sm:text-sm border-gray-200 rounded">
                   <option class="py-1" disabled selected>Project</option>
                 </select>
               </div>
             </div>
           </div>
-          <dl class="mt-5 grid grid-cols-1 rounded-sm bg-gray-50 overflow-hidden divide-y divide-white md:grid-cols-4 md:divide-y-0 md:divide-x">
+          <dl class="mt-5 grid grid-cols-1 rounded-md bg-white shadow-sm overflow-hidden divide-y divide-gray-100 md:grid-cols-5 md:divide-y-0 md:divide-x">
             <div>
               <div class="px-4 py-5 sm:p-6">
                 <h6 class="font-mono uppercase text-xs text-black mt-1">
-                  Model Accuracy
+                  Accuracy
                 </h6>
                 <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                   <div class="flex items-baseline text-2xl font-semibold text-black">
-                    99.2%
+                    82%
                   </div>
                 </dd>
               </div>
@@ -70,11 +70,11 @@
             <div>
               <div class="px-4 py-5 sm:p-6">
                 <h6 class="font-mono uppercase text-xs text-cobalt-500 mt-1">
-                  Tasks qa’d
+                  Ready to Audit
                 </h6>
                 <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                   <div class="flex items-baseline text-2xl font-semibold text-cobalt-500">
-                    33,214
+                    33
                   </div>
                 </dd>
               </div>
@@ -87,7 +87,20 @@
                 </h6>
                 <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                   <div class="flex items-baseline text-2xl font-semibold text-mosque-500">
-                    99.9%
+                    29
+                  </div>
+                </dd>
+              </div>
+            </div>
+
+            <div>
+              <div class="px-4 py-5 sm:p-6">
+                <h6 class="font-mono uppercase text-xs text-orange-500 mt-1">
+                  Fixed
+                </h6>
+                <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                  <div class="flex items-baseline text-2xl font-semibold text-orange-500">
+                    8
                   </div>
                 </dd>
               </div>
@@ -100,7 +113,7 @@
                 </h6>
                 <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                   <div class="flex items-baseline text-2xl font-semibold text-red-500">
-                    0.1%
+                    4
                   </div>
                 </dd>
               </div>
@@ -139,7 +152,7 @@
           </div>
         </div>
 
-        <div class="mt-12">
+        <div class="mt-12 bg-white rounded-md shadow-sm p-5">
           <h3 class="text-lg leading-6 font-bold text-gray-900 mb-6">
             Quality Over Time
           </h3>

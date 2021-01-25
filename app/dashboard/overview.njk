@@ -5,10 +5,10 @@
 {% block content %}
   {% include 'partial/app-dashboard-tabs.njk' %}
 
-  <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last" tabindex="0">
+  <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last bg-gray-50" tabindex="0">
     <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8">
       <div class="h-full">
-        <div class="mt-4">
+        <div class="mt-4 bg-white rounded-md shadow-sm p-6">
           <h3 class="text-lg leading-6 font-bold text-gray-900 mb-6">
             Tasks Created Over Time
           </h3>
@@ -16,7 +16,7 @@
           <div id="basic-line2"></div>
         </div>
 
-        <div class="mt-12">
+        <div class="mt-4 bg-white rounded-md shadow-sm p-6">
           <h3 class="text-lg leading-6 font-bold text-gray-900 mb-6">
             Tasks Completed Over Time
           </h3>
@@ -24,7 +24,7 @@
           <div id="basic-line3"></div>
         </div>
 
-        <div class="mt-12">
+        <div class="mt-4 bg-white rounded-md shadow-sm p-6 mb-12">
           <h3 class="text-lg leading-6 font-bold text-gray-900 mb-6">
             Quality Over Time
           </h3>
