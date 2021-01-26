@@ -96,6 +96,10 @@ progress[value]::-webkit-progress-value {
   @apply bg-cobalt-100 text-cobalt-500;
 }
 
+.badge-black {
+  @apply bg-black text-white;
+}
+
 .Accepted,
 .Completed {
   @apply uppercase inline-flex items-center px-1 py-0 rounded bg-mosque-200 text-mosque-800;
@@ -782,4 +786,32 @@ circle.highcharts-legend-nav-active, circle.highcharts-legend-nav-inactive {
 
 text.highcharts-credits {
   display: none !important;
+}
+.grid-lines {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: block;
+  height: 100vh;
+  pointer-events: none;
+  width: 100%;
+  z-index: 1;
+}
+
+.grid-lines__content {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.grid-lines__line:first-of-type {
+  border-left: 1px solid rgba(4,40,75,.07);
+}
+
+.grid-lines__line {
+  border-left: 1px solid rgba(4,40,75,.07);
 }

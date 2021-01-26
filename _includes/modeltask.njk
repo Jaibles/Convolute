@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      {% block title %}App{% endblock %}
+    </title>
+    <meta charset="UTF-8"/>
+    {% if description %}
+      <meta name="description" content="{{description}}"/>
+    {% endif %}
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+    <link rel="stylesheet" href="/style.css?v={% version %}"/>
+    {% block head %}{% endblock %}
+    <script src="/js/alpine.js?v={% version %}"></script>
+  </head>
+  <body>
+    <div class="h-screen bg-gray-100 flex overflow-hidden bg-white" x-data="{open:false}">
+
+      <div class="flex flex-col min-w-0 flex-1 overflow-hidden">
+
+          <div class="flex-1 z-0 flex overflow-hidden h-full">
+            <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last" tabindex="0">
+              <!-- Start main area-->
+              <div class="absolute inset-0">
+                <div class="h-full">
+
+                  <div class="border-b border-gray-200 bg-white sm:flex sm:items-center sm:justify-between">
+                    <div class="flex items-center">
+                      <button onclick="goBack()" class="flex-shrink-0 h-16 w-16 border-r border-gray-100 flex items-center justify-center hover:bg-gray-50">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                      </button>
+                      <div class="ml-6 mt-0.5">
+                        <h6 class="font-mono text-xs text-gray-500">
+                          Dataset
+                        </h6>
+                        <h4 class="font-bold text-gray-900">
+                          Envelope Scan 0
+                        </h4>
+                      </div>
+                      <div class="ml-6 mt-0.5">
+                        <h6 class="font-mono text-xs text-gray-500">
+                          Envelope
+                        </h6>
+                        <h4 class="font-bold text-gray-900">
+                          {{ title }}
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div class="pr-3">
+                      <div class="flex">
+                        <span class="relative z-0 inline-flex shadow-sm rounded ml-2">
+                          <button type="button" class="relative inline-flex items-center px-2 py-2 rounded-l border border-gray-200 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+                            <span class="sr-only">Previous</span>
+                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                          </button>
+                          <button type="button" class="-ml-px relative inline-flex items-center px-2 py-2 rounded-r border border-gray-200 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+                            <span class="sr-only">Next</span>
+                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-7 h-full">
+                    <div class="col-span-5">
+                      <div class="relative bg-gray-100 h-full flex items-center justify-center">
+                        <div class="w-4/6">
+                          {% block content %}
+                            {{ content | safe }}
+                          {% endblock %}
+                        </div>
+                        <img class="absolute w-100 h-100 object-cover" src="/src/images/envelope-overlay.svg" alt="">
+                      </div>
+                    </div>
+
+                    <div class="bg-white border-l border-gray-200 px-8 pt-3 col-span-2">
+                      <div class="mt-4 mb-8">
+                        <h3 class="font-bold">Envelope detail</h3>
+                        <div class="flex items-center mt-2">
+                          <p class="text-sm">Show details</p>
+                          <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div class="mt-4 mb-10">
+                        <div class="">
+                          <h3 class="font-bold">Data model</h3>
+                        </div>
+
+                        <label class="inline-flex items-center mt-4">
+                          <input type="checkbox" class="form-checkbox h-5 w-5 rounded bg-gray-white border-gray-500 border-2 text-cobalt-600" checked>
+                          <span class="ml-2 text-gray-700 text-sm">Convolute envelope model A</span>
+                        </label>
+
+                        <label class="inline-flex items-center mt-2">
+                          <input type="checkbox" class="form-checkbox h-5 w-5 rounded bg-gray-white border-gray-500 border-2 text-cobalt-600">
+                          <span class="ml-2 text-gray-700 text-sm">Convolute envelope model B</span>
+                        </label>
+                      </div>
+
+                      <div class="mt-4 flex justify-between items-center">
+                        <h3 class="font-bold">Labels</h3>
+                        <h6 class="text-xs font-mono ">Confidence</h6>
+                      </div>
+                      <div class="space-y-6 pt-4">
+                        <div class="">
+                          <div class="flex justify-between">
+                            <label for="company_website" class="text-sm font-bold">
+                              IBM Code
+                            </label>
+                            <label for="company_website" class="badge badge-black">
+                              1.0
+                            </label>
+                          </div>
+                          <div class="mt-1 flex rounded">
+                            <div class="text-sm">
+                              {{ ibmcode }}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="">
+                          <div class="flex justify-between">
+                            <label for="company_website" class="text-sm font-bold">
+                              Sender name
+                            </label>
+                            <label for="company_website" class="badge badge-black">
+                              0.95
+                            </label>
+                          </div>
+                          <div class="mt-1 flex rounded">
+                            <div class="text-sm">
+                              {{ sendername }}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="">
+                          <div class="flex justify-between">
+                            <label for="company_website" class="text-sm font-bold">
+                              Sender address
+                            </label>
+                            <label for="company_website" class="badge badge-black">
+                              0.80
+                            </label>
+                          </div>
+                          <div class="mt-1 flex rounded">
+                            <div class="text-sm">
+                              {{ senderaddress }}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="">
+                          <div class="flex justify-between">
+                            <label for="company_website" class="text-sm font-bold">
+                              RECIPIENT address
+                            </label>
+                            <label for="company_website" class="badge badge-black">
+                              0.95
+                            </label>
+                          </div>
+                          <div class="mt-1 flex rounded">
+                            <div class="text-sm">
+                              {{ recipientaddress }}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="">
+                          <div class="flex justify-between">
+                            <label for="company_website" class="text-sm font-bold">
+                              RECIPIENT name
+                            </label>
+                            <label for="company_website" class="badge badge-black">
+                              0.95
+                            </label>
+                          </div>
+                          <div class="mt-1 flex rounded">
+                            <div class="text-sm">
+                              {{ recipientname }}
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {% set nextTask = collections.task | getNextCollectionItem(page) %}
+                  {% if nextTask %}<p><a class="p-4" href="{{ nextTask.url }}"></a></p>{% endif %}
+
+                </div>
+              </div>
+              <!-- End main area -->
+            </main>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</html>

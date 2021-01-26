@@ -1,0 +1,73 @@
+{% extends "_includes/app.njk" %}
+ 
+{% block title %}Convolute{% endblock %}
+ 
+{% block content %}
+  <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last" tabindex="0">
+    <!-- Start main area-->
+
+    <!-- Background color split screen for large screens -->
+    <div class="relative min-h-screen flex flex-col">
+      <!-- Navbar -->
+      <!-- 3 column wrapper -->
+      <div class="flex-grow w-full max-w-7xl mx-auto xl:px-8 lg:flex">
+        <!-- Left sidebar & main wrapper -->
+        <div class="flex-1 min-w-0 bg-white xl:flex">
+          <div class="border-b border-gray-200 xl:border-b-0 xl:flex-shrink-0 xl:w-24 xl:border-r xl:border-gray-200 bg-white flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+            <div class="h-full pl-4 pr-6 py-6 sm:pl-6 lg:pl-8 xl:pl-0">
+              <!-- Start left column area -->
+              <div class="h-full relative">
+                <div class="absolute inset-0">
+                  <div class="jss523">
+                    <a class="h-4 flex items-center mb-4" href="/ion">Introduction</a>
+                    <div class="font-mono uppercase text-xs text-gray-500 mb-4 mt-12">Dataset</div>
+                    <a class="h-4 flex items-center mb-4" href="/taset">Create Dataset</a>
+                    <a class="h-4 flex items-center mb-4" href="/taset-from-project">Create Dataset From Project</a>
+                    <a class="h-4 flex items-center mb-4" href="/s">Append Images</a>
+                    <a class="h-4 flex items-center mb-4" href="/et-info">Get Dataset Info</a>
+                    <a class="h-4 flex items-center mb-4" href="/sets">List Datasets</a>
+                    <a class="h-4 flex items-center mb-4" href="/taset">Delete Dataset</a>
+                    <div class="font-mono uppercase text-xs text-gray-500 mb-4 mt-12">Dataset Items</div>
+                    <a class="h-4 flex items-center mb-4" href="/et-item-info">Get Dataset Item Info</a>
+                    <a class="h-4 flex items-center mb-4" href="/et-items-from-dataset">Get Dataset Items</a>
+                    <a class="h-4 flex items-center mb-4" href="/taset-item">Delete Dataset Item</a>
+                    <div class="font-mono uppercase text-xs text-gray-500 mb-4 mt-12">Slice</div>
+                    <a class="h-4 flex items-center mb-4" href="/ice">Create Slice</a>
+                    <a class="h-4 flex items-center mb-4" href="/-info">Get Slice Info</a>
+                    <a class="h-4 flex items-center mb-4" href="/ice">Delete Slice</a>
+                    <div class="font-mono uppercase text-xs text-gray-500 mb-4 mt-12">Ground Truth</div>
+                    <a class="h-4 flex items-center mb-4" href="/d-truth">Add Ground Truth</a>
+                    <a class="h-4 flex items-center mb-4" href="/sks">Ingest Tasks</a>
+                    <div class="font-mono uppercase text-xs text-gray-500 mb-4 mt-12">Model Outputs</div>
+                    <a class="h-4 flex items-center mb-4" href="/model">Add Your Model</a>
+                    <a class="h-4 flex items-center mb-4" href="/del-run">Create Model Run</a>
+                    <a class="h-4 flex items-center mb-4" href="/del-outputs">Add Model Prediction</a>
+                    <a class="h-4 flex items-center mb-4" href="/-run-info">Get Model Run Info</a>
+                    <a class="h-4 flex items-center mb-4" href="/del-run">Commit Model Run</a>
+                    <a class="h-4 flex items-center mb-4" href="/-predictions">Get Model Predictions</a>
+                    <a class="h-4 flex items-center mb-4" href="/del-run">Delete Model Run</a>
+                    <div class="font-mono uppercase text-xs text-gray-500 mb-4 mt-12">Explore Your Data</div>
+                    <a class="h-4 flex items-center mb-4" href="/">Query Bar</a>
+                  </div>
+                </div>
+              </div>
+              <!-- End left column area -->
+            </div>
+          </div>
+
+          <div class="bg-white lg:min-w-0 lg:flex-1">
+            <div class="h-full py-6 px-4 sm:px-6 lg:px-8">
+              <!-- Start main area-->
+              <div class="relative h-full" style="min-height: 36rem;">
+                <div class="absolute inset-0 border-4 border-gray-200 border-dashed rounded-lg"></div>
+              </div>
+              <!-- End main area -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- End main area -->
+  </main>
+{% endblock %}
