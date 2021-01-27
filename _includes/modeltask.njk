@@ -70,7 +70,7 @@
                     </div>
                   </div>
 
-                  <div class="grid grid-cols-7 h-full">
+                  <div class="grid grid-cols-7 h-full" x-data="{ showB: false, showA: true }">
                     <div class="col-span-5">
                       <div class="relative bg-gray-100 h-full flex items-center justify-center">
                         <div class="w-4/6">
@@ -78,7 +78,8 @@
                             {{ content | safe }}
                           {% endblock %}
                         </div>
-                        <img class="absolute w-100 h-100 object-cover" src="/src/images/envelope-overlay.svg" alt="">
+                        <img x-show="showA" class="absolute w-100 h-100 object-cover" src="/src/images/envelope-overlay.svg" alt="">
+                        <img x-show="showB" class="absolute w-100 h-100 object-cover" src="/src/images/envelope-overlayB.svg" alt="">
                       </div>
                     </div>
 
@@ -86,7 +87,7 @@
                       <div class="mt-4 mb-8">
                         <h3 class="font-bold">Envelope detail</h3>
                         <div class="flex items-center mt-2">
-                          <p class="text-sm">Show details</p>
+                          <p class="text-sm text-gray-600">Show details</p>
                           <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                           </svg>
@@ -99,12 +100,12 @@
                         </div>
 
                         <label class="inline-flex items-center mt-4">
-                          <input type="checkbox" class="form-checkbox h-5 w-5 rounded bg-gray-white border-gray-500 border-2 text-cobalt-600" checked>
+                          <input @click="showA = !showA" :aria-expanded="showA ? 'true' : 'false'" :class="{ 'active': showA }" type="checkbox" class="form-checkbox h-5 w-5 rounded bg-gray-white border-gray-500 border-2 text-cobalt-600" checked>
                           <span class="ml-2 text-gray-700 text-sm">Convolute envelope model A</span>
                         </label>
 
                         <label class="inline-flex items-center mt-2">
-                          <input type="checkbox" class="form-checkbox h-5 w-5 rounded bg-gray-white border-gray-500 border-2 text-cobalt-600">
+                          <input @click="showB = !showB" :aria-expanded="showB ? 'true' : 'false'" :class="{ 'active': showB }" type="checkbox" class="form-checkbox h-5 w-5 rounded bg-gray-white border-gray-500 border-2 text-cobalt-600">
                           <span class="ml-2 text-gray-700 text-sm">Convolute envelope model B</span>
                         </label>
                       </div>
